@@ -2,6 +2,6 @@
     require_once 'conn.php';
     require_once 'functions.php';
 
-    PrintRows(AllRecepiesOfCatogory($conn,"Vegan"));
+    AllRecepiesOfCatogory($conn,"Vegetarisch");
 
     mysqli_close($conn);
