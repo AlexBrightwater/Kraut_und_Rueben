@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-18T08:56:57.665Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="cgf87FcVy51j9tbLJnJG" version="15.3.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-18T09:16:56.194Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="-RorWpEB0-UjqzLIyMBX" version="15.3.8" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1221" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1038" dy="642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -308,13 +308,13 @@
         <mxCell id="H9gjLbcXF16FV3ajDk7v-31" value="bestand" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1150" y="820" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="H9gjLbcXF16FV3ajDk7v-32" value="nettopreis" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="H9gjLbcXF16FV3ajDk7v-32" value="nettopreis_ct" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1180" y="880" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="H9gjLbcXF16FV3ajDk7v-33" value="menge" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="H9gjLbcXF16FV3ajDk7v-33" value="mengeneinheit" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1170" y="960" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="H9gjLbcXF16FV3ajDk7v-43" value="menge" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="H9gjLbcXF16FV3ajDk7v-43" value="menge_stück" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="860" y="610" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="H9gjLbcXF16FV3ajDk7v-46" value="&lt;b&gt;&lt;span&gt;bestellung_id&lt;/span&gt;&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=0" parent="1" vertex="1">
@@ -323,7 +323,7 @@
         <mxCell id="H9gjLbcXF16FV3ajDk7v-47" value="datum" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1140" y="570" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="H9gjLbcXF16FV3ajDk7v-48" value="gesamtpreis" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="H9gjLbcXF16FV3ajDk7v-48" value="gesamtpreis_ct" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1230" y="480" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="H9gjLbcXF16FV3ajDk7v-53" value="n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
@@ -493,7 +493,7 @@
           <mxGeometry x="1130" y="290" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Z35I5lINllGwSu34AI4L-18" value="lieferant_id" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=2" vertex="1" parent="1">
-          <mxGeometry x="1050" y="770" width="120" height="40" as="geometry" />
+          <mxGeometry x="1070" y="770" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Z35I5lINllGwSu34AI4L-20" value="ort" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="340" y="760" width="120" height="40" as="geometry" />
