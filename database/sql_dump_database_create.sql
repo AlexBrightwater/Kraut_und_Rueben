@@ -35,7 +35,6 @@ CREATE TABLE bestellung (
     kunde_id INTEGER,
     datum DATE,
     gesamtpreis_ct DECIMAL(10, 2),
-    PRIMARY KEY (bestellung_id)
 );
 
 CREATE TABLE bestellungzutat (
@@ -89,7 +88,8 @@ CREATE TABLE rezeptbeschränkung (
 /***                              Primary Keys                              ***/
 /******************************************************************************/
 
-
+ALTER TABLE bestellung
+    ADD PRIMARY KEY (bestellung_id);
 ALTER TABLE zutat
     ADD PRIMARY KEY (zutat_id);
 ALTER TABLE kunde
