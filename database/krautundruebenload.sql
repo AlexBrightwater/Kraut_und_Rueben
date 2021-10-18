@@ -37,70 +37,70 @@ values (102, 'Obst-Hof Altes Land', 'Westerjork 74', '76', '21635', 'Jork', '041
 INSERT INTO lieferant (lieferant_id, lieferant_name, strasse, haus_nr, plz, ort, telefon, email)
 values (103, 'Molkerei Henning', 'Molkereiwegkundekunde', '13', '19217', 'Dechow', '038873-8976', 'info@molkerei-henning.de');
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1001, 'Zucchini', 'Stück', 89, 100, 101, 19, 2, 1.6);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1002, 'Zwiebel', 'Stück', 15, 50, 101, 28, 4.9, 1.20);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1003, 'Tomate', 'Stück', 45, 50, 101, 18, 2.6, 1);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1004, 'Schalotte', 'Stück', 20, 500, 101, 25, 3.3, 1.5);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1005, 'Karotte', 'Stück', 30, 500, 101, 41, 10, 0.9);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1006, 'Kartoffel', 'Stück', 15, 1500, 101, 71, 14.6, 2);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1007, 'Rucola', 'Bund', 90, 10, 101, 27, 2.1, 2.6);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1008, 'Lauch', 'Stück', 120, 35, 101, 29, 3.3, 2.1);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1009, 'Knoblauch', 'Stück', 25, 250, 101, 141, 28.4, 6.1);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1010, 'Basilikum', 'Bund', 130, 10, 101, 41, 5.1, 3.1);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1011, 'Süßkartoffel', 'Stück', 200, 200, 101, 86, 20, 1.6);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (1012, 'Schnittlauch', 'Bund', 90, 10, 101, 28, 1, 3);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (2001, 'Apfel', 'Stück', 120, 750, 102, 54, 14.4, 0.3);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (3001, 'Vollmilch. 3.5%', 'Liter', 150, 50, 103, 65, 4.7, 3.4);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (3002, 'Mozzarella', 'Packung', 350, 20, 103, 241, 1, 18.1);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (3003, 'Butter', 'Stück', 300, 50, 103, 741, 0.6, 0.7);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (4001, 'Ei', 'Stück', 40, 300, 102, 137, 1.5, 11.9);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (5001, 'Wiener Würstchen', 'Paar', 180, 40, 101, 331, 1.2, 9.9);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (9001, 'Tofu-Würstchen', 'Stück', 180, 20, 103, 252, 7, 17);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (6408, 'Couscous', 'Packung', 190, 15, 102, 351, 67, 12);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (7043, 'Gemüsebrühe', 'Würfel', 20, 4000, 101, 1, 0.5, 0.5);
 
-INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant, kalorien, kohlenhydrate, protein)
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (6300, 'Kichererbsen', 'Dose', 100, 400, 103, 150, 21.2, 9);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
