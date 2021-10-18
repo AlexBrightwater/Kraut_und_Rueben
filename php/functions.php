@@ -28,7 +28,7 @@
         mysqli_stmt_bind_param($stmt, "s", $category);
         $resultData = executeStmt($stmt);
 
-        echo "<h2> Get all Recepies of Catogory: {$category} </h2> <br>";
+        echo "<h2> Alle der Rezepte der Kategorie: <i>{$category}</i> </h2> <br>";
 
         while($row = mysqli_fetch_assoc($resultData)) {
             echo "Rezept: " . $row["rezept_name"] . "<br>";

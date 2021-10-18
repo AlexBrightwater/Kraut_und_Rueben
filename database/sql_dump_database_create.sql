@@ -22,19 +22,19 @@ CREATE TABLE zutat (
     zutat_id INTEGER NOT NULL,
     zutat_name VARCHAR(50),
     mengeneinheit VARCHAR(25),
-    nettopreis_ct DECIMAL(10, 2),
+    nettopreis_ct INTEGER,
     bestand INTEGER,
     lieferant_id INTEGER,
     kalorien INTEGER,
-    kohlenhydrate DECIMAL(10, 2),
-    protein DECIMAL(10, 2)
+    kohlenhydrate INTEGER,
+    protein INTEGER
 );
 
 CREATE TABLE bestellung (
     bestellung_id INTEGER AUTO_INCREMENT NOT NULL,
     kunde_id INTEGER,
     datum DATE,
-    gesamtpreis_ct DECIMAL(10, 2),
+    gesamtpreis_ct INTEGER,
     PRIMARY KEY (bestellung_id)
 );
 
