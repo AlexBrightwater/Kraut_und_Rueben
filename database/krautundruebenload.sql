@@ -269,4 +269,5 @@ INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
 VALUES (2, 1);
 
 INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
-VALUES (2, 2) COMMIT WORK;
+VALUES (2, 2);
+COMMIT WORK;
