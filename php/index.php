@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <title>Kraut und Rueben</title>
     </head>
@@ -19,9 +19,9 @@
                 <th>Bestand</th>
             </tr>
             <?php
-                $ingredients = AllIngredients($conn);
+                $ingredients = Ingredients($conn);
                 while ($row = mysqli_fetch_assoc($ingredients)){
-                    echo "<tr> <td>". $row["zutat_name"] ."</td> <td>". $row["nettopreis_ct"] / 100 ." €</td> <td>". $row["bestand"] ."</td> </tr>";
+                    echo "<tr> <td>". $row["zutat_name"] ."</td> <td>". $row["nettopreis_ct"] / 100 ." €</td> <td>". $row["bestand"] ." stk</td> </tr>";
                 }
             ?>
         </table>

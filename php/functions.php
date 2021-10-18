@@ -19,19 +19,21 @@
         return null;
     }
 
-    function AllRecipes($conn){
+    function Recipes($conn){
         $sql = "SELECT * FROM rezept;";
         $stmt = prepareStmt($conn, $sql);
         return executeStmt($stmt);
     }
 
-    function AllIngredients($conn){
+    function Ingredients($conn){
         $sql = "SELECT * FROM zutat;";
         $stmt = prepareStmt($conn, $sql);
         return executeStmt($stmt);
     }
 
-    function AllRecipesOfCategory($conn, $category){
+    ### REQUIRED FUNCTIONS ###
+
+    function RecipesOfCategory($conn, $category){
         $sql = "SELECT rezept_name, ernährungskategorie.kategorie_name FROM rezept
                 INNER JOIN rezepternährungskategorie ON rezept.rezept_id = rezepternährungskategorie.rezept_id
                 INNER JOIN ernährungskategorie ON rezepternährungskategorie.kategorie_id = ernährungskategorie.kategorie_id
@@ -42,7 +44,7 @@
         return executeStmt($stmt);
     }
 
-    function AllIngredientsOfRecipe($conn, $recipe){
+    function IngredientsOfRecipe($conn, $recipe){
         $sql = "SELECT rezept_name, zutat.zutat_name FROM rezept
                 INNER JOIN rezeptzutat ON rezept.rezept_id = rezeptzutat.rezept_id
                 INNER JOIN zutat ON rezeptzutat.zutat_id = zutat.zutat_id
@@ -53,7 +55,7 @@
         return executeStmt($stmt);
     }
 
-    function AllRecipesWithIngredient($conn, $ingredient){
+    function RecipesWithIngredient($conn, $ingredient){
         $sql = "SELECT zutat_name AS zutat, rezept.rezept_name FROM zutat
                 INNER JOIN rezeptzutat ON rezeptzutat.zutat_id = zutat.zutat_id
                 INNER JOIN rezept ON rezept.rezept_id = rezeptzutat.rezept_id
@@ -63,3 +65,21 @@
         mysqli_stmt_bind_param($stmt, "s", $ingredient);
         return executeStmt($stmt);
     }
+
+    function RecipesWithLessThan5Ingredients($conn){
+        $sql = "SELECT rezept.* FROM rezeptzutat
+                INNER JOIN rezept ON rezeptzutat.rezept_id = rezept.rezept_id
+                HAVING COUNT(*) < 5";
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
+    }
+
+    function IngredientsNotInRecipe($conn){
+        $sql = "SELECT zutat.* FROM zutat
+                WHERE NOT EXISTS (
+                SELECT zutat_id FROM rezeptzutat
+                WHERE rezeptzutat.zutat_id = zutat.zutat_id)";
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
+    }
+
