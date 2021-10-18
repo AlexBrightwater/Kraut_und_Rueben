@@ -19,10 +19,10 @@
     }
 
     function AllRecipesOfCategory($conn, $category){
-        $sql = "SELECT REZEPT, ERNÄHRUNGSKATEGORIE.ERNÄHRUNGSKATEGORIE FROM REZEPT
-                INNER JOIN REZEPTERNÄHRUNGSKATEGORIE ON REZEPT.REZEPTNR = REZEPTERNÄHRUNGSKATEGORIE.REZEPTNR
-                INNER JOIN ERNÄHRUNGSKATEGORIE ON REZEPTERNÄHRUNGSKATEGORIE.ERNÄHRUNGSKATEGORIENR = ERNÄHRUNGSKATEGORIE.ERNÄHRUNGSKATEGORIENR
-                WHERE ERNÄHRUNGSKATEGORIE.ERNÄHRUNGSKATEGORIE = ?;";
+        $sql = "SELECT rezept_name, ernährungskategorie.kategorie_name FROM rezept
+                INNER JOIN rezepternährungskategorie ON rezept.rezept_id = rezepternährungskategorie.rezept_id
+                INNER JOIN ernährungskategorie ON rezepternährungskategorie.kategorie_id = ernährungskategorie.kategorie_id
+                WHERE ernährungskategorie.kategorie_name = ?;";
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $category);
@@ -31,16 +31,16 @@
         echo "<h2> Get all Recepies of Catogory: {$category} </h2> <br>";
 
         while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Rezept: " . $row["REZEPT"] . "<br>";
+            echo "Rezept: " . $row["rezept_name"] . "<br>";
         }
     }
 
 
     function AllIngredientsOfRecipe($conn, $recipe){
-        $sql = "SELECT REZEPT, ZUTAT.BEZEICHNUNG FROM REZEPT
-                INNER JOIN REZEPTZUTAT ON REZEPT.REZEPTNR = REZEPTZUTAT.REZEPTNR
-                INNER JOIN ZUTAT ON REZEPTZUTAT.ZUTATENNR = ZUTAT.ZUTATENNR
-                WHERE REZEPT.REZEPT = ?;";
+        $sql = "SELECT rezept_name, zutat.zutat_name FROM rezept
+                INNER JOIN rezeptzutat ON rezept.rezept_id = rezeptzutat.rezept_id
+                INNER JOIN zutat ON rezeptzutat.zutat_id = zutat.zutat_id
+                WHERE rezept.rezept_name = ?;";
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $recipe);
@@ -49,15 +49,15 @@
         echo "<h2> Alle Zutaten des Rezepts: <i>{$recipe}</i> </h2> <br>";
 
         while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Zutat: " . $row["BEZEICHNUNG"] . "<br>";
+            echo "Zutat: " . $row["zutat_name"] . "<br>";
         }
     }
 
     function AllRecipesWithIngredient($conn, $ingredient){
-        $sql = "SELECT BEZEICHNUNG AS ZUTAT, REZEPT.REZEPT FROM ZUTAT
-                INNER JOIN REZEPTZUTAT ON REZEPTZUTAT.ZUTATENNR = ZUTAT.ZUTATENNR
-                INNER JOIN REZEPT ON REZEPT.REZEPTNR = REZEPTZUTAT.REZEPTNR
-                WHERE ZUTAT.BEZEICHNUNG = ?;";
+        $sql = "SELECT zutat_name AS zutat, rezept.rezept_name FROM zutat
+                INNER JOIN rezeptzutat ON rezeptzutat.zutat_id = zutat.zutat_id
+                INNER JOIN rezept ON rezept.rezept_id = rezeptzutat.rezept_id
+                WHERE zutat.zutat_name = ?;";
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $ingredient);
@@ -66,6 +66,6 @@
         echo "<h2> Alle Rezepte, die <i>{$ingredient}</i> enthalten </h2> <br>";
 
         while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Rezept: " . $row["REZEPT"] . "<br>";
+            echo "Rezept: " . $row["rezept_name"] . "<br>";
         }
     }
