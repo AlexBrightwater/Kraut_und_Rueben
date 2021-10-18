@@ -13,9 +13,22 @@
 
     function executeStmt($stmt)
     {
-        mysqli_stmt_execute($stmt);
+        if(mysqli_stmt_execute($stmt)){
+            return mysqli_stmt_get_result($stmt);
+        }
+        return null;
+    }
 
-        return mysqli_stmt_get_result($stmt);
+    function AllRecipes($conn){
+        $sql = "SELECT * FROM rezept;";
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
+    }
+
+    function AllIngredients($conn){
+        $sql = "SELECT * FROM zutat;";
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
     }
 
     function AllRecipesOfCategory($conn, $category){
@@ -26,15 +39,8 @@
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $category);
-        $resultData = executeStmt($stmt);
-
-        echo "<h2> Get all Recepies of Catogory: {$category} </h2> <br>";
-
-        while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Rezept: " . $row["rezept_name"] . "<br>";
-        }
+        return executeStmt($stmt);
     }
-
 
     function AllIngredientsOfRecipe($conn, $recipe){
         $sql = "SELECT rezept_name, zutat.zutat_name FROM rezept
@@ -44,13 +50,7 @@
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $recipe);
-        $resultData = executeStmt($stmt);
-
-        echo "<h2> Alle Zutaten des Rezepts: <i>{$recipe}</i> </h2> <br>";
-
-        while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Zutat: " . $row["zutat_name"] . "<br>";
-        }
+        return executeStmt($stmt);
     }
 
     function AllRecipesWithIngredient($conn, $ingredient){
@@ -61,11 +61,5 @@
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $ingredient);
-        $resultData = executeStmt($stmt);
-
-        echo "<h2> Alle Rezepte, die <i>{$ingredient}</i> enthalten </h2> <br>";
-
-        while($row = mysqli_fetch_assoc($resultData)) {
-            echo "Rezept: " . $row["rezept_name"] . "<br>";
-        }
+        return executeStmt($stmt);
     }
