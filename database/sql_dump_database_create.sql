@@ -1,85 +1,88 @@
-DROP DATABASE IF EXISTS krautundrueben;
-CREATE DATABASE IF NOT EXISTS krautundrueben;
-USE krautundrueben;
+DROP
+DATABASE IF EXISTS krautundrueben;
+CREATE
+DATABASE IF NOT EXISTS krautundrueben;
+USE
+krautundrueben;
 
-CREATE TABLE KUNDE (
-    KUNDENNR        INTEGER NOT NULL,
-    NACHNAME        VARCHAR(50),
-    VORNAME         VARCHAR(50),
-    GEBURTSDATUM	  DATE,
-	 STRASSE         VARCHAR(50),
-	 HAUSNR			  VARCHAR(6),			
-    PLZ             VARCHAR(5),
-    ORT             VARCHAR(50),
-    TELEFON         VARCHAR(25),
-    EMAIL           VARCHAR(50)
-    );
-
-CREATE TABLE ZUTAT(
-    ZUTATENNR			INTEGER NOT NULL,
-    BEZEICHNUNG      VARCHAR(50),
-    EINHEIT        	VARCHAR (25),
-    NETTOPREIS       DECIMAL(10,2),
-    BESTAND          INTEGER,
-    LIEFERANT			INTEGER,
-	 KALORIEN			INTEGER,
-	 KOHLENHYDRATE		DECIMAL (10,2),
-	 PROTEIN				DECIMAL(10,2)
+CREATE TABLE kunde (
+    kunde_id INTEGER NOT NULL,
+    nachname VARCHAR(50),
+    vorname VARCHAR(50),
+    geburtsdatum DATE,
+    strasse VARCHAR(50),
+    haus_nr VARCHAR(6),
+    plz VARCHAR(5),
+    ort VARCHAR(50),
+    telefon VARCHAR(25),
+    email VARCHAR(50)
 );
 
-CREATE TABLE BESTELLUNG (
-    BESTELLNR        INTEGER AUTO_INCREMENT NOT NULL,
-    KUNDENNR         INTEGER,
-    BESTELLDATUM     DATE,
-    RECHNUNGSBETRAG  DECIMAL(10,2),
-    PRIMARY KEY (BESTELLNR)
+CREATE TABLE zutat (
+    zutat_id INTEGER NOT NULL,
+    zutat_name VARCHAR(50),
+    mengeneinheit VARCHAR(25),
+    nettopreis_ct DECIMAL(10, 2),
+    bestand INTEGER,
+    lieferant_id INTEGER,
+    kalorien INTEGER,
+    kohlenhydrate DECIMAL(10, 2),
+    protein DECIMAL(10, 2)
 );
 
-CREATE TABLE BESTELLUNGZUTAT (
-    BESTELLNR       INTEGER NOT NULL,
-    ZUTATENNR       INTEGER,
-    MENGE     		  INTEGER
+CREATE TABLE bestellung (
+    bestellung_id INTEGER AUTO_INCREMENT NOT NULL,
+    kunde_id INTEGER,
+    datum DATE,
+    gesamtpreis_ct DECIMAL(10, 2),
+    PRIMARY KEY (bestellung_id)
 );
 
-CREATE TABLE LIEFERANT (
-    LIEFERANTENNR   INTEGER NOT NULL,
-    LIEFERANTENNAME VARCHAR(50),
-    STRASSE         VARCHAR(50),
-    HAUSNR			  VARCHAR(6),
-    PLZ             VARCHAR(5),
-    ORT             VARCHAR(50),
-    TELEFON			  VARCHAR(25),
-    EMAIL           VARCHAR(50)
+CREATE TABLE bestellungzutat (
+    bestellung_id INTEGER NOT NULL,
+    zutat_id INTEGER,
+    menge INTEGER
 );
 
-CREATE TABLE REZEPTZUTAT (
-    ZUTATENNR       INTEGER NOT NULL,
-    REZEPTNR      INTEGER NOT NULL
+CREATE TABLE lieferant (
+    lieferant_id INTEGER NOT NULL,
+    lieferant_name VARCHAR(50),
+    strasse VARCHAR(50),
+    haus_nr VARCHAR(6),
+    plz VARCHAR(5),
+    ort VARCHAR(50),
+    telefon VARCHAR(25),
+    email VARCHAR(50)
 );
 
-CREATE TABLE REZEPT (
-    REZEPTNR      INTEGER NOT NULL,
-    REZEPTNAME      VARCHAR(50)
+CREATE TABLE rezeptzutat (
+    zutat_id INTEGER NOT NULL,
+    rezept_id INTEGER NOT NULL
 );
 
-CREATE TABLE ERNÄHRUNGSKATEGORIE (
-    ERNÄHRUNGSKATEGORIENR       INTEGER NOT NULL,
-    ERNÄHRUNGSKATEGORIE      VARCHAR(50)
+CREATE TABLE rezept (
+    rezept_id INTEGER NOT NULL,
+    rezept_name VARCHAR(50)
 );
 
-CREATE TABLE REZEPTERNÄHRUNGSKATEGORIE (
-    ERNÄHRUNGSKATEGORIENR       INTEGER NOT NULL,
-    REZEPTNR      INTEGER NOT NULL
+CREATE TABLE ernährungskategorie (
+    kategorie_id INTEGER NOT NULL,
+    kategorie_name VARCHAR(50)
 );
 
-CREATE TABLE BESCHRÄNKUNG (
-    BESCHRÄNKUNGNR       INTEGER NOT NULL,
-    BESCHRÄNKUNG      VARCHAR(50)
+CREATE TABLE rezepternährungskategorie (
+    kategorie_id INTEGER NOT NULL,
+    rezept_id INTEGER NOT NULL
 );
 
-CREATE TABLE REZEPTBESCHRÄNKUNG (
-    BESCHRÄNKUNGNR       INTEGER NOT NULL,
-    REZEPTNR      INTEGER NOT NULL
+CREATE TABLE beschränkung (
+    beschränkung_id INTEGER NOT NULL,
+    beschränkung_name VARCHAR(50)
+);
+
+CREATE TABLE rezeptbeschränkung (
+    beschränkung_id INTEGER NOT NULL,
+    rezept_id INTEGER NOT NULL
 );
 
 /******************************************************************************/
@@ -87,25 +90,50 @@ CREATE TABLE REZEPTBESCHRÄNKUNG (
 /******************************************************************************/
 
 
-ALTER TABLE ZUTAT ADD PRIMARY KEY (ZUTATENNR);
-ALTER TABLE KUNDE ADD PRIMARY KEY (KUNDENNR);
-ALTER TABLE LIEFERANT ADD PRIMARY KEY (LIEFERANTENNR);
-ALTER TABLE BESTELLUNGZUTAT ADD PRIMARY KEY (BESTELLNR,ZUTATENNR);
-ALTER TABLE REZEPT ADD PRIMARY KEY (REZEPTNR);
-ALTER TABLE ERNÄHRUNGSKATEGORIE ADD PRIMARY KEY (ERNÄHRUNGSKATEGORIENR);
-ALTER TABLE BESCHRÄNKUNG ADD PRIMARY KEY (BESCHRÄNKUNGNR);
+ALTER TABLE zutat
+    ADD PRIMARY KEY (zutat_id);
+ALTER TABLE kunde
+    ADD PRIMARY KEY (kunde_id);
+ALTER TABLE lieferant
+    ADD PRIMARY KEY (lieferant_id);
+ALTER TABLE bestellungzutat
+    ADD PRIMARY KEY (bestellung_id, zutat_id);
+ALTER TABLE rezept
+    ADD PRIMARY KEY (rezept_id);
+ALTER TABLE ernährungskategorie
+    ADD PRIMARY KEY (kategorie_id);
+ALTER TABLE beschränkung
+    ADD PRIMARY KEY (beschränkung_id);
 
 /******************************************************************************/
 /***                              Foreign Keys                              ***/
 /******************************************************************************/
 
-ALTER TABLE ZUTAT ADD FOREIGN KEY (LIEFERANT) REFERENCES LIEFERANT (LIEFERANTENNR);
-ALTER TABLE BESTELLUNGZUTAT ADD FOREIGN KEY (BESTELLNR) REFERENCES BESTELLUNG (BESTELLNR);
-ALTER TABLE BESTELLUNG ADD FOREIGN KEY (KUNDENNR) REFERENCES KUNDE (KUNDENNR);
-ALTER TABLE BESTELLUNGZUTAT ADD FOREIGN KEY (ZUTATENNR) REFERENCES ZUTAT (ZUTATENNR);
-ALTER TABLE REZEPTZUTAT ADD FOREIGN KEY (ZUTATENNR) REFERENCES ZUTAT (ZUTATENNR);
-ALTER TABLE REZEPTZUTAT ADD FOREIGN KEY (REZEPTNR) REFERENCES REZEPT (REZEPTNR);
-ALTER TABLE REZEPTERNÄHRUNGSKATEGORIE ADD FOREIGN KEY (ERNÄHRUNGSKATEGORIENR) REFERENCES ERNÄHRUNGSKATEGORIE (ERNÄHRUNGSKATEGORIENR);
-ALTER TABLE REZEPTERNÄHRUNGSKATEGORIE ADD FOREIGN KEY (REZEPTNR) REFERENCES REZEPT (REZEPTNR);
-ALTER TABLE REZEPTBESCHRÄNKUNG ADD FOREIGN KEY (BESCHRÄNKUNGNR) REFERENCES BESCHRÄNKUNG (BESCHRÄNKUNGNR);
-ALTER TABLE REZEPTBESCHRÄNKUNG ADD FOREIGN KEY (REZEPTNR) REFERENCES REZEPT (REZEPTNR);
+ALTER TABLE zutat
+    ADD FOREIGN KEY (lieferant_id) REFERENCES lieferant(lieferant_id);
+ALTER TABLE bestellungzutat
+    ADD FOREIGN KEY (bestellung_id) REFERENCES bestellung(bestellung_id);
+ALTER TABLE bestellung
+    ADD FOREIGN KEY (kunde_id) REFERENCES kunde(kunde_id);
+ALTER TABLE bestellungzutat
+    ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
+ALTER TABLE rezeptzutat
+    ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
+ALTER TABLE rezeptzutat
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
+ALTER TABLE rezepternährungskategorie
+    ADD FOREIGN KEY (kategorie_id) REFERENCES ernährungskategorie(kategorie_id);
+ALTER TABLE rezepternährungskategorie
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
+ALTER TABLE rezeptbeschränkung
+    ADD FOREIGN KEY (beschränkung_id) REFERENCES beschränkung(beschränkung_id);
+ALTER TABLE rezeptbeschränkung
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
+ALTER TABLE rezepternährungskategorie
+    ADD FOREIGN KEY (kategorie_id) REFERENCES ernährungskategorie(kategorie_id);
+ALTER TABLE rezepternährungskategorie
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
+ALTER TABLE rezeptbeschränkung
+    ADD FOREIGN KEY (beschränkung_id) REFERENCES beschränkung(beschränkung_id);
+ALTER TABLE rezeptbeschränkung
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
