@@ -235,13 +235,13 @@ VALUES (1002, 1);
 INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1001, 2);
 
-INSERT INTO ernährungskategorie(kategorie_id, ernährungskategorie_name)
+INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (1, 'Vegan');
 
-INSERT INTO ernährungskategorie(kategorie_id, ernährungskategorie_name)
+INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (2, 'Vegetarisch');
 
-INSERT INTO ernährungskategorie(kategorie_id, ernährungskategorie_name)
+INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (3, 'Frutarisch');
 
 INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
