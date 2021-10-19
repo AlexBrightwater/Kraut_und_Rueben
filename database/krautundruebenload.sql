@@ -233,7 +233,46 @@ INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1002, 1);
 
 INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1005, 1);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1007, 1);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1008, 1);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1001, 2);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1002, 2);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1003, 2);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1004, 2);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (4001, 2);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1001, 3);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1003, 3);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1005, 3);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1006, 3);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1008, 3);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1010, 3);
 
 INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (1, 'Vegan');
