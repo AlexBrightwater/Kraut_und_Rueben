@@ -103,6 +103,9 @@ VALUES (7043, 'Gemüsebrühe', 'Würfel', 20, 4000, 20, 101, 1, 0.5, 0.5);
 INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, gewicht, lieferant_id, kalorien, kohlenhydrate, protein)
 VALUES (6300, 'Kichererbsen', 'Dose', 100, 400, 400, 103, 150, 21.2, 9);
 
+INSERT INTO zutat (zutat_id, zutat_name, mengeneinheit, nettopreis_ct, bestand, gewicht, lieferant_id, kalorien, kohlenhydrate, protein)
+VALUES (6400, 'Linsen', 'Dose', 100, 200, 300, 103, 120, 6.9, 3.8);
+
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
 VALUES (2001, '2020-07-01', 621);
 
@@ -226,6 +229,12 @@ VALUES (2, 'Tomatensalat');
 INSERT INTO rezept(rezept_id, rezept_name)
 VALUES (3, 'Gemüseeintopf');
 
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (4, 'Steak');
+
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (5, 'Linseneintopf');
+
 INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1001, 1);
 
@@ -274,6 +283,39 @@ VALUES (1008, 3);
 INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1010, 3);
 
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1006, 4);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (6400, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1001, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1002, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1003, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1004, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1005, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1006, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1007, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1008, 5);
+
+INSERT INTO rezeptzutat(zutat_id, rezept_id)
+VALUES (1009, 5);
+
 INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (1, 'Vegan');
 
@@ -283,6 +325,12 @@ VALUES (2, 'Vegetarisch');
 INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
 VALUES (3, 'Frutarisch');
 
+INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
+VALUES (4, 'Low Carb');
+
+INSERT INTO ernährungskategorie(kategorie_id, kategorie_name)
+VALUES (5, 'High Protein');
+
 INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
 VALUES (1, 1);
 
@@ -291,6 +339,21 @@ VALUES (2, 1);
 
 INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
 VALUES (2, 2);
+
+INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
+VALUES (1, 3);
+
+INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
+VALUES (2, 3);
+
+INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
+VALUES (4, 3);
+
+INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
+VALUES (5, 4);
+
+INSERT INTO rezepternährungskategorie(kategorie_id, rezept_id)
+VALUES (3, 5);
 
 INSERT INTO beschränkung(beschränkung_id, beschränkung_name)
 VALUES (1, 'Laktose');
@@ -301,6 +364,12 @@ VALUES (2, 'Gluten');
 INSERT INTO beschränkung(beschränkung_id, beschränkung_name)
 VALUES (3, 'Erdnuss');
 
+INSERT INTO beschränkung(beschränkung_id, beschränkung_name)
+VALUES (4, 'Ei');
+
+INSERT INTO beschränkung(beschränkung_id, beschränkung_name)
+VALUES (5, 'Tomate');
+
 INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
 VALUES (1, 1);
 
@@ -309,4 +378,19 @@ VALUES (2, 1);
 
 INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
 VALUES (2, 2);
+
+INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
+VALUES (2, 3);
+
+INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
+VALUES (5, 3);
+
+INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
+VALUES (1, 5);
+
+INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
+VALUES (3, 5);
+
+INSERT INTO rezeptbeschränkung(beschränkung_id, rezept_id)
+VALUES (4, 5);
 COMMIT WORK;
