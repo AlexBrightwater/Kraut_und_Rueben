@@ -1,14 +1,9 @@
 <?php
-    require_once 'conn.php';
-    require_once 'functions.php';
-?>
+    require_once '../../Service/DatabaseConnection.php';
+    require_once '../../Service/Statements.php';
 
-<!DOCTYPE html>
-<html lang="de">
-    <head>
-        <title>Kraut und Rueben</title>
-    </head>
-    <body>
+    include_once '../../header.php';
+?>
         <h1>Kraut und Rueben</h1>
         <br />
         <h3>Zutaten</h3>

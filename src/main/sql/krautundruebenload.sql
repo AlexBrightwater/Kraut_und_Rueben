@@ -1,32 +1,32 @@
 USE
 krautundrueben;
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2001, 'Wellensteyn', 'Kira', '1990-05-05', 'Eppendorfer Landstrasse', '104', '20249', 'Hamburg', '040/443322', 'k.wellensteyn@yahoo.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2001, 'Wellensteyn', 'Kira', '1990-05-05', 'Eppendorfer Landstrasse', '104', '20249', 'Hamburg', '040/443322', 'k.wellensteyn@yahoo.de', '$2y$10$u842rvmHczjvGEoqqURTxeJTdoPBpuxXa7v8pEBqu2Y9V.pKkNi9a');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2002, 'Foede', 'Dorothea', '2000-03-24', 'Ohmstraße', '23', '22765', 'Hamburg', '040/543822', 'd.foede@web.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2002, 'Foede', 'Dorothea', '2000-03-24', 'Ohmstraße', '23', '22765', 'Hamburg', '040/543822', 'd.foede@web.de', '$2y$10$SBjx5/sGe7z5L1XIklOJnOBhqqaXfEIA5gEDGw8J6aMtNIcOMVMFi');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2003, 'Leberer', 'Sigrid', '1989-09-21', 'Bilser Berg', '6', '20459', 'Hamburg', '0175/1234588', 'sigrid@leberer.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2003, 'Leberer', 'Sigrid', '1989-09-21', 'Bilser Berg', '6', '20459', 'Hamburg', '0175/1234588', 'sigrid@leberer.de', '$2y$10$9yaV7VXiBfAhtSsBzit19.h.Vshgu2r3obWZCT.QcNdSn4OI.L9lO');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2004, 'Soerensen', 'Hanna', '1974-04-03', 'Alter Teichweg', '95', '22049', 'Hamburg', '040/634578', 'h.soerensen@yahoo.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2004, 'Soerensen', 'Hanna', '1974-04-03', 'Alter Teichweg', '95', '22049', 'Hamburg', '040/634578', 'h.soerensen@yahoo.de', '$2y$10$Wdub5r8t0gjPfKKY3Y1hKe1gLBXKLCs0rjLxnNGUTHoNlu5RxmqZG');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2005, 'Schnitter', 'Marten', '1964-04-17', 'Stübels', '10', '22835', 'Barsbüttel', '0176/447587', 'schni_mart@gmail.com');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2005, 'Schnitter', 'Marten', '1964-04-17', 'Stübels', '10', '22835', 'Barsbüttel', '0176/447587', 'schni_mart@gmail.com', '$2y$10$el1RbuCjfS.2pAXd1z5dZ.0wl0E7vNVSEuHbHirB4J7CXMSKO8Eqe');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2006, 'Maurer', 'Belinda', '1978-09-09', 'Grotelertwiete', '4a', '21075', 'Hamburg', '040/332189', 'belinda1978@yahoo.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2006, 'Maurer', 'Belinda', '1978-09-09', 'Grotelertwiete', '4a', '21075', 'Hamburg', '040/332189', 'belinda1978@yahoo.de', '$2y$10$h9z3ajUsiNUZdc2qrSlMAuiVOSZcxCqSDGJNFfjnwvx1Z9lYgQpHq');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2007, 'Gessert', 'Armin', '1978-01-29', 'Küstersweg', '3', '21079', 'Hamburg', '040/67890', 'armin@gessert.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2007, 'Gessert', 'Armin', '1978-01-29', 'Küstersweg', '3', '21079', 'Hamburg', '040/67890', 'armin@gessert.de', '$2y$10$yF3HKaXEmdSKu2cw97JHa.IQ2x5HNBGdoVR3e4abSlBPN7IGMbquG');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2008, 'Haessig', 'Jean-Marc', '1982-08-30', 'Neugrabener Bahnhofstraße', '30', '21149', 'Hamburg', '0178-67013390', 'jm@haessig.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2008, 'Haessig', 'Jean-Marc', '1982-08-30', 'Neugrabener Bahnhofstraße', '30', '21149', 'Hamburg', '0178-67013390', 'jm@haessig.de', '$2y$10$kDDTEEWKf/wA89SybEnGMeWx1xw0U8IXMJ5k5pUJBvuyXTOX4lxjW');
 
-INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email)
-VALUES (2009, 'Urocki', 'Eric', '1999-12-04', 'Elbchaussee', '228', '22605', 'Hamburg', '0152-96701390', 'urocki@outlook.de');
+INSERT INTO kunde (kunde_id, nachname, vorname, geburtsdatum, strasse, haus_nr, plz, ort, telefon, email,  passwort)
+VALUES (2009, 'Urocki', 'Eric', '1999-12-04', 'Elbchaussee', '228', '22605', 'Hamburg', '0152-96701390', 'urocki@outlook.de', '$2y$10$YzVL80/5Adg7PfJWcrHZ1eNROOizSN7jzRg8Nx528WpZYPcdU1mKG');
 
 INSERT INTO lieferant (lieferant_id, lieferant_name, strasse, haus_nr, plz, ort, telefon, email)
 values (101, 'Bio-Hof Müller', 'Dorfstraße', '74', '24354', 'Weseby', '04354-9080', 'mueller@biohof.de');

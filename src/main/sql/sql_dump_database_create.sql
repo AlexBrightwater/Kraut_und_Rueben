@@ -15,7 +15,8 @@ CREATE TABLE kunde (
     plz VARCHAR(5),
     ort VARCHAR(50),
     telefon VARCHAR(25),
-    email VARCHAR(50)
+    email VARCHAR(50) UNIQUE NOT NULL,
+    passwort VARCHAR(256) NOT NULL
 );
 
 CREATE TABLE zutat (
