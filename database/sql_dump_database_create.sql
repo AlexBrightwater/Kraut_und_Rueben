@@ -24,6 +24,7 @@ CREATE TABLE zutat (
     mengeneinheit VARCHAR(25),
     nettopreis_ct INTEGER,
     bestand INTEGER,
+    gewicht INTEGER,
     lieferant_id INTEGER,
     kalorien INTEGER,
     kohlenhydrate INTEGER,
