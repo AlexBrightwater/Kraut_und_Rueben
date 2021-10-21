@@ -4,6 +4,7 @@
 
     include_once '../../header.php';
 ?>
+    <main>   
         <h1>Kraut und Rueben</h1>
         <br />
         <h3>Zutaten</h3>
@@ -20,9 +21,11 @@
                 }
             ?>
         </table>
-    </body>
-</html>
+    </main> 
+
+
 
 <?php
     mysqli_close($conn);
+    include_once '../../footer.php';
 ?>
