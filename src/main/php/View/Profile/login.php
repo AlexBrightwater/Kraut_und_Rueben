@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Kraut&Rüben</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
+<?php
+include_once '../../header.php';
+?>
 
 <nav>
-    <div class="wrapper">
+    <div class="sign-logo">
         <a href="../Index/index.php"><img class="wrapper-item wrapper-logo wrapper-left" src="../../../../../www/img/logo.png" alt="logo"></a>
     </div>
 </nav>

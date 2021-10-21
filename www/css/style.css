@@ -8,7 +8,7 @@
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-nav {
+nav.header {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,10 +21,10 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-nav .wrapper-logo {
+nav.header .wrapper-logo {
   width: 200px;
 }
-nav .wrapper-button {
+nav.header .wrapper-button {
   text-decoration: none;
   border: solid;
   border-width: 2px;
@@ -34,10 +34,10 @@ nav .wrapper-button {
   color: black;
   font-size: 1.3rem;
 }
-nav .wrapper-button:nth-child(2) {
+nav.header .wrapper-button:nth-child(2) {
   margin-left: 20px;
 }
-nav .wrapper-button:hover {
+nav.header .wrapper-button:hover {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   background-color: #482e3e;
