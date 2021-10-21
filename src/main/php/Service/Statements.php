@@ -19,18 +19,6 @@
         return null;
     }
 
-    function Recipes($conn){
-        $sql = "SELECT * FROM rezept;";
-        $stmt = prepareStmt($conn, $sql);
-        return executeStmt($stmt);
-    }
-
-    function Ingredients($conn){
-        $sql = "SELECT * FROM zutat;";
-        $stmt = prepareStmt($conn, $sql);
-        return executeStmt($stmt);
-    }
-
     ### REQUIRED FUNCTIONS ###
 
     function RecipesOfCategory($conn, $category){
@@ -56,21 +44,13 @@
     }
 
     function RecipesWithIngredient($conn, $ingredient){
-        $sql = "SELECT zutat_name AS zutat, rezept.rezept_name FROM zutat
+        $sql = "SELECT zutat_name, rezept.rezept_name FROM zutat
                 INNER JOIN rezeptzutat ON rezeptzutat.zutat_id = zutat.zutat_id
                 INNER JOIN rezept ON rezept.rezept_id = rezeptzutat.rezept_id
                 WHERE zutat.zutat_name = ?;";
 
         $stmt = prepareStmt($conn,$sql);
         mysqli_stmt_bind_param($stmt, "s", $ingredient);
-        return executeStmt($stmt);
-    }
-
-    function RecipesWithLessThan5Ingredients($conn){
-        $sql = "SELECT rezept.* FROM rezeptzutat
-                INNER JOIN rezept ON rezeptzutat.rezept_id = rezept.rezept_id
-                HAVING COUNT(*) < 5";
-        $stmt = prepareStmt($conn, $sql);
         return executeStmt($stmt);
     }
 
@@ -83,3 +63,67 @@
         return executeStmt($stmt);
     }
 
+	function AverageNutritionInOrder($conn, $order){
+		$sql = "SELECT bestellungzutat.bestellung_id, SUM(bestellungzutat.menge*zutat.kalorien)/SUM(bestellungzutat.menge), SUM(bestellungzutat.menge*zutat.kohlenhydrate)/SUM(bestellungzutat.menge), SUM(bestellungzutat.menge*zutat.protein)/SUM(bestellungzutat.menge) FROM zutat
+				INNER JOIN bestellungzutat ON zutat.zutat_id = bestellungzutat.zutat_id
+				WHERE bestellungzutat.bestellung_id = ?;";
+		$stmt = prepareStmt($conn, $sql);
+		mysqli_stmt_bind_param($stmt, "i", $order);
+		return executeStmt($stmt);
+	}
+
+	function CaloriesBelowValue($conn, $calories){
+		$sql = "SELECT rezeptzutat.rezept_id, SUM(zutat.kalorien) FROM zutat
+                INNER JOIN rezeptzutat ON zutat.zutat_id = rezeptzutat.zutat_id
+                GROUP BY rezeptzutat.rezept_id
+                HAVING SUM(zutat.kalorien) < ?;";
+		$stmt = prepareStmt($conn, $sql);
+		mysqli_stmt_bind_param($stmt, "i", $calories);
+		return executeStmt($stmt);
+	}
+
+    function RecipesWithLessThan5Ingredients($conn){
+        $sql = "SELECT rezept.* FROM rezeptzutat
+                INNER JOIN rezept ON rezeptzutat.rezept_id = rezept.rezept_id
+                HAVING COUNT(*) < 5";
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
+    }
+
+    function RecipesWithLessThan5IngredientsAndNutritionCategory($conn, $category){
+        $sql = "SELECT rezept_name, ernährungskategorie.kategorie_name, COUNT(rezeptzutat.rezept_id) FROM rezept
+                INNER JOIN rezepternährungskategorie ON rezept.rezept_id = rezepternährungskategorie.rezept_id
+                INNER JOIN ernährungskategorie ON rezepternährungskategorie.kategorie_id = ernährungskategorie.kategorie_id
+                RIGHT JOIN rezeptzutat ON rezept.rezept_id = rezeptzutat.rezept_id
+                WHERE ernährungskategorie.kategorie_name = 'Vegetarisch'
+                GROUP BY rezeptzutat.rezept_id
+                HAVING COUNT(rezeptzutat.rezept_id) < ?;";
+        $stmt = prepareStmt($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $category);
+        return executeStmt($stmt);
+    }
+
+    	### ADDITIONAL FUNCTIONS ###
+
+	function Recipes($conn){
+		$sql = "SELECT * FROM rezept;";
+		$stmt = prepareStmt($conn, $sql);
+		return executeStmt($stmt);
+	}
+
+	function Ingredients($conn){
+		$sql = "SELECT * FROM zutat;";
+		$stmt = prepareStmt($conn, $sql);
+		return executeStmt($stmt);
+	}
+
+	function RecipesOfRestrictions($conn, $restriction){
+		$sql =  "SELECT rezept_name, beschränkung.beschränkung_name FROM rezept
+				INNER JOIN rezeptbeschränkung ON rezept.rezept_id = rezeptbeschränkung.rezept_id
+				INNER JOIN beschränkung ON rezeptbeschränkung.beschränkung_id = beschränkung.beschränkung_id
+				WHERE beschränkung.beschränkung_name = ?;";
+
+		$stmt = prepareStmt($conn,$sql);
+		mysqli_stmt_bind_param($stmt, "s", $restriction);
+		return executeStmt($stmt);
+	}
