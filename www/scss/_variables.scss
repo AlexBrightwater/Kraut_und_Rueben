@@ -5,3 +5,23 @@
 $text: #fff;
 $color_primary: #fff;
 $color_secondary: #482e3e;
+$color_foo: #69495E;
+
+a.signup-form-switch{
+    color: $color_secondary;
+    text-decoration: none;
+}
+a.signup-form-switch:hover{
+    color: $color_foo;
+    transition: .3;
+}
+a.signup-form-switch:focus{
+    border-bottom: 2px solid $color_foo;
+    display: inline-block;
+    line-height: 0.85;
+    text-shadow:
+      2px 2px white,
+      2px -2px white,
+      -2px 2px white,
+      -2px -2px white;
+}

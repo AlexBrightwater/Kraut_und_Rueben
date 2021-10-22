@@ -6,11 +6,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Kraut&Rüben</title>
+        <title>Kraut & Rüben</title>
         <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/style.css">
+        <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/profile.css">
     </head>
     <body>
-        <nav class=>
+        <nav class='header'>
                 <a href="/Kraut_und_Rueben/src/main/php/View/Index/index.php"><img class="wrapper-item wrapper-logo wrapper-left" src="../../../../../www/img/logo.png" alt="logo"></a>
                 <div>
                     <?php
