@@ -1,7 +1,7 @@
 <?php
 include_once '../../header.php';
 ?>
-<main>
+<main class="unique-signin">
     <section class="signup-form">
         <div class="signup-form-group">
             <h2>Log In</h2>
@@ -9,9 +9,6 @@ include_once '../../header.php';
 
                 <div class="signup-form-text">
                     <label class="signup-form-heading" for="Email">E-Mail</label>
-                    <span class="signup-form-hint">I don't have an account
-                        <a class="signup-form-switch" href="signup.php" >Sign Up</a>
-                    </span>
 
                 </div>
                 <div>
@@ -48,6 +45,9 @@ include_once '../../header.php';
                 </div>
 
             </form>
+            <span class="signup-form-hint">I don't have an account
+                 <a class="signup-form-switch" href="signup.php" >Sign Up</a>
+            </span>
         </div>
     </section>
 </main>

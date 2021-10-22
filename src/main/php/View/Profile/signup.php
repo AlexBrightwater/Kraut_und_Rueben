@@ -16,8 +16,8 @@ include_once '../../header.php';
                 <div class="signup-form-text">
                     <label class="signup-form-heading" for="username">Username</label>
                     <span class="signup-form-hint">I already have an Account
-                                <a class="signup-form-switch" href="login.php">Log In</a>
-                            </span>
+                        <a class="signup-form-switch" href="login.php">Log In</a>
+                    </span>
 
                 </div>
                 <div>
