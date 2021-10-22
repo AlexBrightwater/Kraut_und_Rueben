@@ -5,11 +5,10 @@ include_once '../../header.php';
     <section class="signup-form">
         <div class="signup-form-group">
             <h2>Log In</h2>
-            <form action="../../Controller/LoginController.php" method="POST">
+            <form class="login-form" action="../../Controller/LoginController.php" method="POST">
 
                 <div class="signup-form-text">
                     <label class="signup-form-heading" for="Email">E-Mail</label>
-
                 </div>
                 <div>
                     <input class="signup-form-input" type="text" name="email" placeholder="Enter your email...">
@@ -21,6 +20,7 @@ include_once '../../header.php';
                 <div>
                     <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">
                 </div>
+
                 <div class="signup-form-submit">
                     <button class="signup-submit-button" type="submit" name="submit">Log In</button>
                     <?php
