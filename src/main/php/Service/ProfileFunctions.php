@@ -2,9 +2,11 @@
 
     //Signup
 
-    function emptyInputSignup($email, $password, $passwordRepeat){
-        if(empty($email) || empty($password) || empty($passwordRepeat)){
-            return true;
+    function emptyField(...$fields){
+        foreach ($fields as $field){
+            if(empty($field)){
+                return true;
+            }
         }
         return false;
     }
@@ -30,7 +32,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ../View/Profile/signup.php?error=stmtfailed");
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/signup.php?error=stmtfailed");
             exit();
         }
 
@@ -50,19 +52,20 @@
     }
 
     function createUser($conn, $firstname, $lastname, $email, $password, $birthdate, $street, $houseNo, $postalCode, $city, $phone){
-        $sql = "INSERT INTO kunde (vorname, ncahname, email, passwort, geburtsdatum, strasse, haus_nr, plz, ort, telefon) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO kunde (vorname, nachname, email, passwort, geburtsdatum, strasse, haus_nr, plz, ort, telefon) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ./View/Profile/signup.php?error=stmtfailed");
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/signup.php?error=stmtfailed");
             exit();
         }
 
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
         mysqli_stmt_bind_param($stmt, "ssssssssss", $firstname, $lastname, $email, $hashedPwd, $birthdate, $street, $houseNo, $postalCode, $city, $phone);
+
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+
 
         $userExists = userExists($conn, $email);
         session_start();
@@ -78,24 +81,19 @@
         $_SESSION["city"] = $userExists["ort"];
         $_SESSION["phone"] = $userExists["telefon"];
 
-        header("location: ../View/Index/index.php");
+        mysqli_stmt_close($stmt);
+
+        header("location: /Kraut_und_Rueben/src/main/php/View/Index/index.php");
         exit();
     }
 
     //Login
 
-    function emptyInputLogin($email, $password){
-        if(empty($email) || empty($password)){
-            return true;
-        }
-        return false;
-    }
-
     function loginUser($conn, $email, $password){
         $userExists = userExists($conn, $email);
 
         if($userExists === false){
-            header("location: ./View/Profile/login.php?error=userdoesntexist");
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/login.php?error=userdoesntexist");
             exit();
         }
 
@@ -104,7 +102,7 @@
         $checkPwd = password_verify($password, $passwordHashed);
 
         if($checkPwd === false){
-            header("location: ../View/Profile/login.php?error=wrongpassword");
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/login.php?error=wrongpassword");
             exit();
         } else if($checkPwd === true){
             session_start();
@@ -118,12 +116,29 @@
             $_SESSION["postalCode"] = $userExists["pls"];
             $_SESSION["city"] = $userExists["ort"];
             $_SESSION["phone"] = $userExists["telefon"];
-            header("location: ../View/Index/index.php");
+            header("location: /Kraut_und_Rueben/src/main/php/View/Index/index.php");
             exit();
         }
     }
 
+    //Deletion
+
     function deleteUser($conn){
-        $user = $_SESSION["kunde_id"];
+        session_start();
+
+        $sql = "UPDATE kunde SET geburtsdatum = null, telefon = null, email = null, passwort = 'gelöscht' WHERE kunde_id = ?;";
+
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/profile.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "i", $_SESSION['kunde_id']);
+
+        if(!mysqli_stmt_execute($stmt)){
+            header("location: /Kraut_und_Rueben/src/main/php/View/Profile/profile.php?error=".mysqli_error());
+        }
 
     }

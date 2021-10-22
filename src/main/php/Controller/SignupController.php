@@ -2,6 +2,9 @@
 
 if(isset($_POST["submit"])){
 
+    require_once '../Service/DatabaseConnection.php';
+    require_once '../Service/ProfileFunctions.php';
+
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
@@ -14,10 +17,7 @@ if(isset($_POST["submit"])){
     $city = $_POST['city'];
     $phone = $_POST['phone'];
 
-    require_once '../Service/DatabaseConnection.php';
-    require_once '../Service/ProfileFunctions.php';
-
-    if(emptyInputSignup($email, $password, $passwordRepeat) !== false){
+    if(emptyField($email, $password, $passwordRepeat) !== false){
         header("location: ../View/Profile/signup.php?error=emptyinput");
         exit();
     }

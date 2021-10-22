@@ -1,42 +1,41 @@
-DROP
-DATABASE IF EXISTS krautundrueben;
-CREATE
-DATABASE IF NOT EXISTS krautundrueben;
-USE
-krautundrueben;
+DROP DATABASE IF EXISTS krautundrueben;
+CREATE DATABASE IF NOT EXISTS krautundrueben;
+USE krautundrueben;
 
 CREATE TABLE kunde (
-    kunde_id INTEGER NOT NULL,
-    nachname VARCHAR(50),
-    vorname VARCHAR(50),
+    kunde_id INTEGER NOT NULL AUTO_INCREMENT,
+    nachname VARCHAR(50) NOT NULL,
+    vorname VARCHAR(50) NOT NULL,
     geburtsdatum DATE,
-    strasse VARCHAR(50),
-    haus_nr VARCHAR(6),
-    plz VARCHAR(5),
-    ort VARCHAR(50),
+    strasse VARCHAR(50) NOT NULL,
+    haus_nr VARCHAR(6) NOT NULL,
+    plz VARCHAR(5) NOT NULL,
+    ort VARCHAR(50) NOT NULL,
     telefon VARCHAR(25),
-    email VARCHAR(50) UNIQUE NOT NULL,
-    passwort VARCHAR(256) NOT NULL
+    email VARCHAR(50) UNIQUE,
+    passwort VARCHAR(256) NOT NULL,
+    PRIMARY KEY(kunde_id)
 );
 
 CREATE TABLE zutat (
-    zutat_id INTEGER NOT NULL,
+    zutat_id INTEGER NOT NULL AUTO_INCREMENT,
     zutat_name VARCHAR(50),
     mengeneinheit VARCHAR(25),
-    nettopreis_ct INTEGER,
+    nettopreis_ct INTEGER NOT NULL,
     bestand INTEGER,
     gewicht INTEGER,
-    lieferant_id INTEGER,
+    lieferant_id INTEGER NOT NULL,
     kalorien INTEGER,
     kohlenhydrate INTEGER,
-    protein INTEGER
+    protein INTEGER,
+    PRIMARY KEY(zutat_id)
 );
 
 CREATE TABLE bestellung (
     bestellung_id INTEGER AUTO_INCREMENT NOT NULL,
-    kunde_id INTEGER,
-    datum DATE,
-    gesamtpreis_ct INTEGER,
+    kunde_id INTEGER NOT NULL ,
+    datum DATE NOT NULL ,
+    gesamtpreis_ct INTEGER NOT NULL ,
     PRIMARY KEY (bestellung_id)
 );
 
@@ -47,14 +46,15 @@ CREATE TABLE bestellungzutat (
 );
 
 CREATE TABLE lieferant (
-    lieferant_id INTEGER NOT NULL,
-    lieferant_name VARCHAR(50),
-    strasse VARCHAR(50),
-    haus_nr VARCHAR(6),
-    plz VARCHAR(5),
-    ort VARCHAR(50),
+    lieferant_id INTEGER NOT NULL AUTO_INCREMENT,
+    lieferant_name VARCHAR(50) NOT NULL,
+    strasse VARCHAR(50) NOT NULL,
+    haus_nr VARCHAR(6) NOT NULL,
+    plz VARCHAR(5) NOT NULL,
+    ort VARCHAR(50) NOT NULL,
     telefon VARCHAR(25),
-    email VARCHAR(50)
+    email VARCHAR(50),
+    PRIMARY KEY(lieferant_id)
 );
 
 CREATE TABLE rezeptzutat (
@@ -63,13 +63,15 @@ CREATE TABLE rezeptzutat (
 );
 
 CREATE TABLE rezept (
-    rezept_id INTEGER NOT NULL,
-    rezept_name VARCHAR(50)
+    rezept_id INTEGER NOT NULL AUTO_INCREMENT,
+    rezept_name VARCHAR(50),
+    PRIMARY KEY(rezept_id)
 );
 
 CREATE TABLE ernährungskategorie (
-    kategorie_id INTEGER NOT NULL,
-    kategorie_name VARCHAR(50)
+    kategorie_id INTEGER NOT NULL AUTO_INCREMENT,
+    kategorie_name VARCHAR(50),
+    PRIMARY KEY(kategorie_id)
 );
 
 CREATE TABLE rezepternährungskategorie (
@@ -78,8 +80,9 @@ CREATE TABLE rezepternährungskategorie (
 );
 
 CREATE TABLE beschränkung (
-    beschränkung_id INTEGER NOT NULL,
-    beschränkung_name VARCHAR(50)
+    beschränkung_id INTEGER NOT NULL AUTO_INCREMENT,
+    beschränkung_name VARCHAR(50),
+    PRIMARY KEY(beschränkung_id)
 );
 
 CREATE TABLE rezeptbeschränkung (
@@ -91,20 +94,8 @@ CREATE TABLE rezeptbeschränkung (
 /***                              Primary Keys                              ***/
 /******************************************************************************/
 
-ALTER TABLE zutat
-    ADD PRIMARY KEY (zutat_id);
-ALTER TABLE kunde
-    ADD PRIMARY KEY (kunde_id);
-ALTER TABLE lieferant
-    ADD PRIMARY KEY (lieferant_id);
 ALTER TABLE bestellungzutat
     ADD PRIMARY KEY (bestellung_id, zutat_id);
-ALTER TABLE rezept
-    ADD PRIMARY KEY (rezept_id);
-ALTER TABLE ernährungskategorie
-    ADD PRIMARY KEY (kategorie_id);
-ALTER TABLE beschränkung
-    ADD PRIMARY KEY (beschränkung_id);
 
 /******************************************************************************/
 /***                              Foreign Keys                              ***/

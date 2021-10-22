@@ -8,7 +8,7 @@ if(isset($_POST["submit"])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if(emptyInputLogin($email, $password) !== false){
+    if(emptyField($email, $password) !== false){
         header("location: ../View/Profile/login.php?error=emptyinput");
         exit();
     }
