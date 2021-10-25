@@ -118,11 +118,10 @@
 		$stmt = prepareStmt($conn, $sql);
 		return executeStmt($stmt);
 	}
-
-	function Categories($conn){
-        $sql = "SELECT * FROM ernährungskategorie;";
-        $stmt = prepareStmt($conn,$sql);
-        return executeStmt($stmt);
+    function Categories($conn){
+        $sql = "SELECT * FROM ernährungskategorie";
+       $stmt = prepareStmt($conn,$sql);
+       return executeStmt($stmt);
     }
 
     function restrictions($conn){

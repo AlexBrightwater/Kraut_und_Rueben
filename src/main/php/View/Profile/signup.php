@@ -18,7 +18,9 @@ include_once '../../header.php';
             <input class="signup-form-input" type="text" name="street" placeholder="Straße">             
             <input class="signup-form-input" type="text" name="houseNo" placeholder="Haus Nr.">              
             <input class="signup-form-input" type="text" name="phone" placeholder="Telefon">
-
+            <br>
+            <input name="ToS" type="checkbox" required>
+            <label for="ToS">By clicking "Sign up", you agree to our terms of service and privacy policy.</label>
                 <div class="signup-form-submit">
                     <button class="signup-submit-button" type="submit" name="submit">Sign Up</button>
 

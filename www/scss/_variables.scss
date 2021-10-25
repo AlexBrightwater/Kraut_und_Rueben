@@ -7,6 +7,8 @@ $color_primary: #fff;
 $color_secondary: #482e3e;
 $color_foo: #69495E;
 
+$input-width: 150px;
+
 a.signup-form-switch{
     color: $color_secondary;
     text-decoration: none;
@@ -25,6 +27,7 @@ a.signup-form-switch:focus{
       -2px 2px white,
       -2px -2px white;
 }
+
 
 
 @mixin submit-button {

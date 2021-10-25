@@ -51,6 +51,7 @@ main{
     flex-basis: 20%;
 }
 
+//Table
 table {
     border-collapse: collapse;
     width: 100%;
@@ -67,3 +68,11 @@ th {
     background-color: $color_secondary;
     color: $text;
 }
+
+//DB Search inputs
+input.I_Recepie{
+}
+
+input.I_Recepie:focus{
+}
+
