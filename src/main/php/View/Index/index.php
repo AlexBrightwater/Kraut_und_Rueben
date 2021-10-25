@@ -1,7 +1,7 @@
 <?php
-ini_set('display_error', 1);  
+/*ini_set('display_error', 1);  
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
     require_once '../../Service/DatabaseConnection.php';
     require_once '../../Service/Statements.php';
 
@@ -28,13 +28,12 @@ error_reporting(E_ALL);
                         $category = $row['kategorie_name'];
                         echo "<option value='$category'>$category</option>";
                     }
-                    ?>
-                    </datalist>
+                ?>
+            </datalist>
             <button type="submit">Get</button>
             <br>
-
             <?php
-                if($_GET['R_Cat']){
+                if(isset($_GET['R_Cat'])){
                     echo "<h3>". $_GET['R_Cat'] ."</h3>";
                     echo  "<table><tr><th>Rezept</th><th>Kategorie</th></tr>";
                     $recipes = RecipesOfCategory($conn, $_GET['R_Cat']);
@@ -62,7 +61,7 @@ error_reporting(E_ALL);
             <br/>
 
             <?php
-                if($_GET['I_Recepie']){
+                if(isset($_GET['I_Recepie'])){
                     echo "<h3>". $_GET['I_Recepie'] ."</h3>";
                     echo  "<table><tr><th>Zutat</th></tr>";
                     $ingredients = IngredientsOfRecipe($conn, $_GET['I_Recepie']);
