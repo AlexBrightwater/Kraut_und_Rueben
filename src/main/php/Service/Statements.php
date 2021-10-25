@@ -118,6 +118,18 @@
 		return executeStmt($stmt);
 	}
 
+	function Categories($conn){
+        $sql = "SELECT * FROM ernährungskategorie;";
+        $stmt = prepareStmt($conn,$sql);
+        return executeStmt($stmt);
+    }
+
+    function restrictions($conn){
+        $sql = "SELECT * FROM beschränkung;";
+        $stmt = prepareStmt($conn,$sql);
+        return executeStmt($stmt);
+    }
+
 	function RecipesOfRestrictions($conn, $restriction){
 		$sql =  "SELECT rezept_name, beschränkung.beschränkung_name FROM rezept
 				INNER JOIN rezeptbeschränkung ON rezept.rezept_id = rezeptbeschränkung.rezept_id
