@@ -142,6 +142,21 @@ VALUES (2005, '2020-08-12', 867);
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
 VALUES (2003, '2020-08-13', 2087);
 
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (1, 'Caesersalat');
+
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (2, 'Tomatensalat');
+
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (3, 'Gemüseeintopf');
+
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (4, 'Steak');
+
+INSERT INTO rezept(rezept_id, rezept_name)
+VALUES (5, 'Linseneintopf');
+
 INSERT INTO bestellungzutat(bestellung_id, zutat_id, menge)
 VALUES (1, 1001, 5);
 
@@ -220,20 +235,47 @@ VALUES (11, 1012, 5);
 INSERT INTO bestellungzutat(bestellung_id, zutat_id, menge)
 VALUES (12, 1010, 15);
 
-INSERT INTO rezept(rezept_id, rezept_name)
-VALUES (1, 'Caesersalat');
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (1, 1, 2);
 
-INSERT INTO rezept(rezept_id, rezept_name)
-VALUES (2, 'Tomatensalat');
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (1, 2, 1);
 
-INSERT INTO rezept(rezept_id, rezept_name)
-VALUES (3, 'Gemüseeintopf');
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (1, 3, 3);
 
-INSERT INTO rezept(rezept_id, rezept_name)
-VALUES (4, 'Steak');
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (1, 5, 4);
 
-INSERT INTO rezept(rezept_id, rezept_name)
-VALUES (5, 'Linseneintopf');
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (2, 2, 2);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (2, 5, 1);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (3, 1, 3);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (3, 4, 4);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (3, 5, 2);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (4, 1, 2);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (4, 2, 3);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (4, 3, 4);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (4, 4, 1);
+
+INSERT INTO bestellungrezept(bestellung_id, rezept_id, menge)
+VALUES (4, 5, 7);
 
 INSERT INTO rezeptzutat(zutat_id, rezept_id)
 VALUES (1001, 1);

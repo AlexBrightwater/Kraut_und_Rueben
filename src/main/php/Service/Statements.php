@@ -5,7 +5,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "Some thing went wrong SQL: {$sql}  Statement: {$stmt}";
+            echo "Something went wrong SQL: {$sql}  Statement: {$stmt}";
             exit();
         }
         return $stmt;
@@ -73,8 +73,9 @@
 	}
 
 	function CaloriesBelowValue($conn, $calories){
-		$sql = "SELECT rezeptzutat.rezept_id, SUM(zutat.kalorien) FROM zutat
+		$sql = "SELECT rezept.rezept_name, SUM(zutat.kalorien) FROM zutat
                 INNER JOIN rezeptzutat ON zutat.zutat_id = rezeptzutat.zutat_id
+                INNER JOIN rezept ON rezept.rezept_id = rezeptzutat.rezept_id
                 GROUP BY rezeptzutat.rezept_id
                 HAVING SUM(zutat.kalorien) < ?;";
 		$stmt = prepareStmt($conn, $sql);
@@ -95,11 +96,11 @@
                 INNER JOIN rezepternährungskategorie ON rezept.rezept_id = rezepternährungskategorie.rezept_id
                 INNER JOIN ernährungskategorie ON rezepternährungskategorie.kategorie_id = ernährungskategorie.kategorie_id
                 RIGHT JOIN rezeptzutat ON rezept.rezept_id = rezeptzutat.rezept_id
-                WHERE ernährungskategorie.kategorie_name = 'Vegetarisch'
+                WHERE ernährungskategorie.kategorie_name = ?
                 GROUP BY rezeptzutat.rezept_id
-                HAVING COUNT(rezeptzutat.rezept_id) < ?;";
+                HAVING COUNT(rezeptzutat.rezept_id) < 5;";
         $stmt = prepareStmt($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "i", $category);
+        mysqli_stmt_bind_param($stmt, "s", $category);
         return executeStmt($stmt);
     }
 

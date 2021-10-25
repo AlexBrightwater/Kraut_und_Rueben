@@ -39,10 +39,24 @@ CREATE TABLE bestellung (
     PRIMARY KEY (bestellung_id)
 );
 
+CREATE TABLE rezept (
+    rezept_id INTEGER NOT NULL AUTO_INCREMENT,
+    rezept_name VARCHAR(50),
+    PRIMARY KEY(rezept_id)
+);
+
 CREATE TABLE bestellungzutat (
     bestellung_id INTEGER NOT NULL,
     zutat_id INTEGER,
-    menge INTEGER
+    menge INTEGER,
+    PRIMARY KEY(bestellung_id, zutat_id)
+);
+
+CREATE TABLE bestellungrezept (
+    bestellung_id INTEGER NOT NULL,
+    rezept_id INTEGER,
+    menge INTEGER,
+    PRIMARY KEY(bestellung_id, rezept_id)
 );
 
 CREATE TABLE lieferant (
@@ -60,12 +74,6 @@ CREATE TABLE lieferant (
 CREATE TABLE rezeptzutat (
     zutat_id INTEGER NOT NULL,
     rezept_id INTEGER NOT NULL
-);
-
-CREATE TABLE rezept (
-    rezept_id INTEGER NOT NULL AUTO_INCREMENT,
-    rezept_name VARCHAR(50),
-    PRIMARY KEY(rezept_id)
 );
 
 CREATE TABLE ernährungskategorie (
@@ -91,13 +99,6 @@ CREATE TABLE rezeptbeschränkung (
 );
 
 /******************************************************************************/
-/***                              Primary Keys                              ***/
-/******************************************************************************/
-
-ALTER TABLE bestellungzutat
-    ADD PRIMARY KEY (bestellung_id, zutat_id);
-
-/******************************************************************************/
 /***                              Foreign Keys                              ***/
 /******************************************************************************/
 
@@ -105,10 +106,14 @@ ALTER TABLE zutat
     ADD FOREIGN KEY (lieferant_id) REFERENCES lieferant(lieferant_id);
 ALTER TABLE bestellungzutat
     ADD FOREIGN KEY (bestellung_id) REFERENCES bestellung(bestellung_id);
+ALTER TABLE bestellungrezept
+    ADD FOREIGN KEY (bestellung_id) REFERENCES bestellung(bestellung_id);
 ALTER TABLE bestellung
     ADD FOREIGN KEY (kunde_id) REFERENCES kunde(kunde_id);
 ALTER TABLE bestellungzutat
     ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
+ALTER TABLE bestellungrezept
+    ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
 ALTER TABLE rezeptzutat
     ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 ALTER TABLE rezeptzutat
