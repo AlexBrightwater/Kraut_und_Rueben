@@ -84,9 +84,10 @@
 	}
 
     function RecipesWithLessThan5Ingredients($conn){
-        $sql = "SELECT rezept.* FROM rezeptzutat
-                INNER JOIN rezept ON rezeptzutat.rezept_id = rezept.rezept_id
-                HAVING COUNT(*) < 5";
+        $sql = "SELECT rezept.rezept_name, COUNT(rezeptzutat.rezept_id) FROM rezeptzutat
+                INNER JOIN rezept ON rezept.rezept_id = rezeptzutat.rezept_id
+                GROUP BY rezeptzutat.rezept_id
+                HAVING COUNT(rezeptzutat.rezept_id) < 5;";
         $stmt = prepareStmt($conn, $sql);
         return executeStmt($stmt);
     }
