@@ -1,50 +1,23 @@
 <?php
 include_once '../../header.php';
 ?>
-<main>
-    <nav>
-        <div class="sign-logo">
-            <a href="../Index/index.php"><img class="wrapper-item wrapper-logo wrapper-left" src="../../../../../www/img/logo.png" alt="logo"></a>
-        </div>
-    </nav>
-
+<main class="main-center">
     <section class="signup-form">
         <div class="signup-form-group">
             <h2>Sign Up</h2>
-            <form action="../../Controller/SignupController.php" method="POST">
+            <form class="form" action="../../Controller/SignupController.php" method="POST">
 
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="username">Username</label>
-                    <span class="signup-form-hint">I already have an Account
-                        <a class="signup-form-switch" href="login.php">Log In</a>
-                    </span>
-
-                </div>
-                <div>
-                    <input class="signup-form-input" type="text" name="username" placeholder="Enter your username...">
-                </div>
-
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="Password">Password</label>
-                </div>
-                <div>
-                    <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">
-                </div>
-
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="Repeat Password">Repeat Password</label>
-                </div>
-                <div>
-                    <input class="signup-form-input" type="password" name="password-repeat" placeholder="Repeat your password...">
-                </div>
-
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="E-Mail">E-Mail</label>
-                    <span class="signup-form-hint">*Optional</span>
-                </div>
-                <div>
-                    <input class="signup-form-input" type="text" name="email" placeholder="E-Mail...">
-                </div>
+            <input class="signup-form-input" type="text" name="firstname" placeholder="Vorname">              
+            <input class="signup-form-input" type="text" name="lastname" placeholder="Nachname">              
+            <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">             
+            <input class="signup-form-input" class="signup-form-input" type="password" name="password-repeat" placeholder="Repeat your password...">              
+            <input class="signup-form-input" type="text" name="email" placeholder="E-Mail">              
+            <input class="signup-form-input" type="date" name="birthdate" placeholder="Geburtsdatum">              
+            <input class="signup-form-input" type="text" name="city" placeholder="Ort">             
+            <input class="signup-form-input" ype="text" name="postalCode" placeholder="Plz">             
+            <input class="signup-form-input" type="text" name="street" placeholder="Straße">             
+            <input class="signup-form-input" type="text" name="houseNo" placeholder="Haus Nr.">              
+            <input class="signup-form-input" type="text" name="phone" placeholder="Telefon">
 
                 <div class="signup-form-submit">
                     <button class="signup-submit-button" type="submit" name="submit">Sign Up</button>
@@ -68,11 +41,12 @@ include_once '../../header.php';
                         }
                     }
                     ?>
-
                 </div>
 
             </form>
-
+            <span class="signup-form-hint">I already have an Account
+                <a class="signup-form-switch" href="login.php">Log In</a>
+            </span>
         </div>
     </section>
 </main>

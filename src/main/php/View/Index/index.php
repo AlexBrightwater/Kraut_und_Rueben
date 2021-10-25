@@ -4,10 +4,8 @@
 
     include_once '../../header.php';
 ?>
-    <main>   
-        <h1>Kraut und Rueben</h1>
-        <br />
-        <h3>Zutaten</h3>
+    <main>
+        <!--<h3>Zutaten</h3>
         <table>
             <tr>
                 <th>Zutat</th>
@@ -20,7 +18,11 @@
                     echo "<tr> <td>". $row["zutat_name"] ."</td> <td>". $row["nettopreis_ct"] / 100 ." €</td> <td>". $row["bestand"] ." stk</td> </tr>";
                 }
             ?>
-        </table>
+        </table>-->
+
+        <form class="IngredientsOfRecipe" action="">
+            
+        </form>
     </main> 
 
 

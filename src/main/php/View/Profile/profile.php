@@ -4,6 +4,9 @@
 ?>
 
     <main>
+        <form action="/Kraut_und_Rueben/src/main/php/Controller/ProfileController.php" method="post">
+            <button type="submit" name="delete">Profil löschen!</button>
+        </form>
         <?php
         if(isset($_SESSION["kunde_id"])){
             echo "<p>Vorname: ". $_SESSION["firstname"] ."</p>";

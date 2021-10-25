@@ -17,15 +17,74 @@ a.signup-form-switch:focus {
   text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
 }
 
-.signup-form-text {
+.login-form-text {
   font-size: 1.2rem;
 }
 
-main.unique-signin {
+main.main-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
+}
+
+.login-form-text,
+.signup-form-text {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+input.login-form-input,
+input.signup-form-input {
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  background-color: #69495E;
+  color: #fff;
+  width: 20vw;
+  height: 3.4rem;
+  padding: 0.8rem 1rem;
+  font-family: "Source Code Pro", Roboto, Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+input.login-form-input:focus,
+input.signup-form-input:focus {
+  border-style: solid;
+  border-width: 5px;
+  border-color: #482e3e;
+  padding: calc(.8rem - 5px) calc(1rem - 5px);
+}
+
+span.login-form-hint,
+span.signup-form-hint {
+  color: grey;
+}
+
+form.form {
+  margin-bottom: 3rem;
+}
+
+button.login-submit-button,
+button.signup-submit-button {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  background-color: #69495E;
+  color: #fff;
+  padding: 0.6rem 1rem;
+}
+
+button.login-submit-button:hover,
+button.login-submit-button:focus,
+button.signup-submit-button:hover,
+button.signup-submit-button:focus {
+  background-color: #482e3e;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }

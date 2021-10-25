@@ -1,28 +1,28 @@
 <?php
 include_once '../../header.php';
 ?>
-<main class="unique-signin">
-    <section class="signup-form">
-        <div class="signup-form-group">
+<main class="main-center">
+    <section class="login-form">
+        <div class="login-form-group">
             <h2>Log In</h2>
-            <form class="login-form" action="../../Controller/LoginController.php" method="POST">
+            <form class="form" action="../../Controller/LoginController.php" method="POST">
 
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="Email">E-Mail</label>
+                <div class="login-form-text">
+                    <label class="login-form-heading" for="Email">E-Mail</label>
                 </div>
                 <div>
-                    <input class="signup-form-input" type="text" name="email" placeholder="Enter your email...">
+                    <input class="login-form-input" type="text" name="email" placeholder="Enter your email...">
                 </div>
 
-                <div class="signup-form-text">
-                    <label class="signup-form-heading" for="Password">Password</label>
+                <div class="login-form-text">
+                    <label class="login-form-heading" for="Password">Password</label>
                 </div>
                 <div>
-                    <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">
+                    <input class="login-form-input" type="password" name="password" placeholder="Enter your password...">
                 </div>
 
-                <div class="signup-form-submit">
-                    <button class="signup-submit-button" type="submit" name="submit">Log In</button>
+                <div class="login-form-submit">
+                    <button class="login-submit-button" type="submit" name="submit">Log In</button>
                     <?php
                     if(isset($_GET["error"])){
 

@@ -1,10 +1,48 @@
 @import "_variables";
 
-.signup-form-text{
+.login-form-text{
     font-size: 1.2rem;
 }
 
-main.unique-signin{
+main.main-center{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
+
+.login-form-text,
+.signup-form-text{
+    @include form-textlike-input-label;
+}
+
+input.login-form-input,
+input.signup-form-input{
+    @include form-textlike-input;
+}
+
+input.login-form-input:focus,
+input.signup-form-input:focus{
+    @include form-textlike-input-focus;
+}
+
+span.login-form-hint,
+span.signup-form-hint{
+    color: grey;
+}
+
+form.form{
+    margin-bottom: 3rem;
+}
+
+button.login-submit-button,
+button.signup-submit-button{
+    @include submit-button;
+}
+
+button.login-submit-button:hover,
+button.login-submit-button:focus,
+button.signup-submit-button:hover,
+button.signup-submit-button:focus{
+    @include submit-button-hover;
+}
+

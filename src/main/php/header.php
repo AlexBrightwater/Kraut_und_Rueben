@@ -20,6 +20,7 @@
                         if(isset($_SESSION["kunde_id"])){
                             if($_SERVER['REQUEST_URI'] == $path . 'Profile/profile.php'){
                                 echo '<a id="logoutbutton" class="wrapper-item wrapper-button" href="../../Controller/LogoutController.php">Log out</a>';
+   
                             }
                             else if($_SERVER['REQUEST_URI'] == $path . 'Profile/login.php'){
                                 /*No Buttons here  Also this is not possible*/

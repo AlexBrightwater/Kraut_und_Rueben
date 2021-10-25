@@ -25,3 +25,45 @@ a.signup-form-switch:focus{
       -2px 2px white,
       -2px -2px white;
 }
+
+
+@mixin submit-button {
+    margin-top: 1rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    background-color: $color_foo;
+    color: $text;
+    padding: .6rem 1rem;
+}
+
+@mixin submit-button-hover {
+    background-color: $color_secondary;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+@mixin form-textlike-input {
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: $color_foo;
+    color: $text;
+    width: 20vw;
+    height: 3.4rem;
+    padding: .8rem 1rem;
+    font-family: "Source Code Pro", Roboto, Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+
+@mixin form-textlike-input-focus {
+    border-style: solid;
+    border-width: 5px;
+    border-color: $color_secondary;
+    padding: calc(.8rem - 5px) calc(1rem - 5px);
+}
+
+@mixin form-textlike-input-label {
+    text-align: left;
+    padding-left: 1rem;
+}
