@@ -96,11 +96,11 @@
                 INNER JOIN rezepternährungskategorie ON rezept.rezept_id = rezepternährungskategorie.rezept_id
                 INNER JOIN ernährungskategorie ON rezepternährungskategorie.kategorie_id = ernährungskategorie.kategorie_id
                 RIGHT JOIN rezeptzutat ON rezept.rezept_id = rezeptzutat.rezept_id
-                WHERE ernährungskategorie.kategorie_name = 'Vegetarisch'
+                WHERE ernährungskategorie.kategorie_name = ?
                 GROUP BY rezeptzutat.rezept_id
-                HAVING COUNT(rezeptzutat.rezept_id) < ?;";
+                HAVING COUNT(rezeptzutat.rezept_id) < 5;";
         $stmt = prepareStmt($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "i", $category);
+        mysqli_stmt_bind_param($stmt, "s", $category);
         return executeStmt($stmt);
     }
 
