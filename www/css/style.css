@@ -6,8 +6,8 @@ a.signup-form-switch {
 
 a.signup-form-switch:hover {
   color: #69495E;
-  -webkit-transition: 0.3;
-  transition: 0.3;
+  -webkit-transition: .3;
+  transition: .3;
 }
 
 a.signup-form-switch:focus {
@@ -15,6 +15,10 @@ a.signup-form-switch:focus {
   display: inline-block;
   line-height: 0.85;
   text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -25,6 +29,7 @@ a.signup-form-switch:focus {
 
 :root {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
 }
 
 nav.header {
@@ -40,9 +45,11 @@ nav.header {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
 nav.header .wrapper-logo {
   width: 200px;
 }
+
 nav.header .wrapper-button {
   text-decoration: none;
   border: solid;
@@ -53,9 +60,11 @@ nav.header .wrapper-button {
   color: black;
   font-size: 1.3rem;
 }
+
 nav.header .wrapper-button:nth-child(2) {
   margin-left: 20px;
 }
+
 nav.header .wrapper-button:hover,
 nav.header .wrapper-button:focus {
   -webkit-transition: 0.3s ease-out;
@@ -101,4 +110,27 @@ tr:nth-child(odd) {
 th {
   background-color: #482e3e;
   color: #fff;
+}
+
+button.get,
+input.get {
+  background-color: #482e3e;
+  border: none;
+  color: #fff;
+  width: calc(auto + 10px);
+  border-radius: 15px;
+  padding: 3px 7px;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+input.index {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-color: #482e3e;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }

@@ -6,8 +6,8 @@ a.signup-form-switch {
 
 a.signup-form-switch:hover {
   color: #69495E;
-  -webkit-transition: 0.3;
-  transition: 0.3;
+  -webkit-transition: .3;
+  transition: .3;
 }
 
 a.signup-form-switch:focus {
@@ -46,7 +46,7 @@ input.signup-form-input {
   color: #fff;
   width: 20vw;
   height: 3.4rem;
-  padding: 0.8rem 1rem;
+  padding: .8rem 1rem;
   font-family: "Source Code Pro", Roboto, Arial, Helvetica, sans-serif;
   margin-bottom: 1rem;
 }
@@ -76,7 +76,7 @@ button.signup-submit-button {
   font-size: 1.2rem;
   background-color: #69495E;
   color: #fff;
-  padding: 0.6rem 1rem;
+  padding: .6rem 1rem;
 }
 
 button.login-submit-button:hover,
@@ -84,7 +84,7 @@ button.login-submit-button:focus,
 button.signup-submit-button:hover,
 button.signup-submit-button:focus {
   background-color: #482e3e;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   cursor: pointer;
 }
