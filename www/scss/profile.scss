@@ -1,132 +1,47 @@
 @import "_variables";
 
-*{
-    box-sizing: border-box;
-    outline: none;
+.login-form-text{
+    font-size: 1.2rem;
 }
 
-:root{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-}
-
-nav.header{
-    margin-top: 20px;
+main.main-center{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    .wrapper-logo{
-        width: 200px;
-    }
-    .wrapper-button{
-        text-decoration: none;
-        border: solid;
-        border-width:  2px;
-        border-color: black;
-        border-radius: 20px;
-        padding: 5px 15px; 
-        color: black;
-        font-size: 1.3rem;
-    }
-    .wrapper-button:nth-child(2){
-        margin-left: 20px;
-    }
-    .wrapper-button:hover,
-    .wrapper-button:focus{
-        transition: 0.3s ease-out;
-        background-color: $color_secondary;
-        color: $text;
-    }
+    justify-content: center;
+    text-align: center;
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: row;
-}
-main{
-    width: 60%;
+.login-form-text,
+.signup-form-text{
+    @include form-textlike-input-label;
 }
 
-.wrapper-leftbar,
-.wrapper-rightbar{
-    flex-basis: 20%;
+input.login-form-input,
+input.signup-form-input{
+    @include form-textlike-input;
 }
 
-//Table
-table {
-    border-collapse: collapse;
-    width: 100%;
+input.login-form-input:focus,
+input.signup-form-input:focus{
+    @include form-textlike-input-focus;
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
+span.login-form-hint,
+span.signup-form-hint{
+    color: grey;
 }
 
-tr:nth-child(odd){background-color: #f2f2f2}
-
-th {
-    background-color: $color_secondary;
-    color: $text;
+form.form{
+    margin-bottom: 3rem;
 }
 
-//DB Search inputs
-input.I_Recepie{
+button.login-submit-button,
+button.signup-submit-button{
+    @include submit-button;
 }
 
-input.I_Recepie:focus{
+button.login-submit-button:hover,
+button.login-submit-button:focus,
+button.signup-submit-button:hover,
+button.signup-submit-button:focus{
+    @include submit-button-hover;
 }
-
-button.get{
-    background-color: $color_secondary;
-    border: none;
-    color: $text;
-    width: calc(auto + 10px);
-    border-radius: 15px;
-}
-
-input.index{
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom-color: $color_secondary;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-}
-
-
-option {
-    background-image:
-     linear-gradient(45deg, transparent 50%, gray 50%),
-     linear-gradient(135deg, gray 50%, transparent 50%),
-     radial-gradient(#ddd 70%, transparent 72%);
-   background-position:
-     calc(100% - 20px) calc(1em + 2px),
-     calc(100% - 15px) calc(1em + 2px),
-     calc(100% - .5em) .5em;
-   background-size:
-     5px 5px,
-     5px 5px,
-     1.5em 1.5em;
-   background-repeat: no-repeat;
- }
- 
- option {
-   background-image:
-     linear-gradient(45deg, white 50%, transparent 50%),
-     linear-gradient(135deg, transparent 50%, white 50%),
-     radial-gradient(gray 70%, transparent 72%);
-   background-position:
-     calc(100% - 15px) 1em,
-     calc(100% - 20px) 1em,
-     calc(100% - .5em) .5em;
-   background-size:
-     5px 5px,
-     5px 5px,
-     1.5em 1.5em;
-   background-repeat: no-repeat;
-   border-color: green;
-   outline: 0;
- }
- 
