@@ -124,8 +124,6 @@
     //Deletion
 
     function deleteUser($conn){
-        session_start();
-
         $sql = "UPDATE kunde SET geburtsdatum = null, telefon = null, email = null, passwort = 'gelöscht' WHERE kunde_id = ?;";
 
         $stmt = mysqli_stmt_init($conn);

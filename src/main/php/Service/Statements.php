@@ -124,15 +124,22 @@
        return executeStmt($stmt);
     }
 
-    function restrictions($conn){
+    function Restrictions($conn){
         $sql = "SELECT * FROM beschränkung;";
-        $stmt = prepareStmt($conn,$sql);
+        $stmt = prepareStmt($conn, $sql);
         return executeStmt($stmt);
     }
 
     function Orders($conn){
         $sql = "SELECT * FROM bestellung;";
-        $stmt = prepareStmt($conn,$sql);
+        $stmt = prepareStmt($conn, $sql);
+        return executeStmt($stmt);
+    }
+
+    function MyOrders($conn){
+        $sql = "SELECT * FROM bestellung WHERE kunde_id = ?";
+        $stmt = prepareStmt($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $_SESSION['kunde_id']);
         return executeStmt($stmt);
     }
 
