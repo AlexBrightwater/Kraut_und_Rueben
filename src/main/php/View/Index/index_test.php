@@ -190,10 +190,17 @@ include_once '../../header.php';
 
     <!-- Durchschnittler Nährwert pro Bestellung -->
     <?php
-    $categories = Orders($conn);
-    while ($row = mysqli_fetch_assoc($categories)) {
-        $category = $row['bestellung_id'];
-        echo "<option value='$category'>";
+    if (isset($_GET['N_OrderID'])) {
+        echo "<h3>Nährwerte der Bestellung Nr. " . $_GET['N_OrderID'] . "</h3>";
+        echo "<table>";
+        echo "<tr><th>Durschnitt Kalorien pro 100g</th>";
+        echo "<th>Durschnitt Kohlenhydrate pro 100g</th>";
+        echo "<th>Durschnitt Proteine pro 100g</th></tr>";
+        $averageNutritionInOrder = AverageNutritionInOrder($conn, $_GET['N_OrderID']);
+        while ($row = mysqli_fetch_assoc($averageNutritionInOrder)) {
+            echo "<tr> <td>" . $row["SUM(bestellungzutat.menge*zutat.kalorien)/SUM(bestellungzutat.menge)"] . " kcal</td> <td>" . $row["SUM(bestellungzutat.menge*zutat.kohlenhydrate)/SUM(bestellungzutat.menge)"] . "</td> <td>" . $row["SUM(bestellungzutat.menge*zutat.protein)/SUM(bestellungzutat.menge)"] . "</td> </tr>";
+        }
+        echo "</table>";
     }
     ?>
 
