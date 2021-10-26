@@ -14,7 +14,7 @@ a.signup-form-switch:focus {
   border-bottom: 2px solid #69495E;
   display: inline-block;
   line-height: 0.85;
-  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
 }
 
 html {
