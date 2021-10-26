@@ -1,15 +1,16 @@
 <?php
 /*ini_set('display_error', 1);  
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);*/
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);*/
 require_once '../../Service/DatabaseConnection.php';
 require_once '../../Service/Statements.php';
 
 include_once '../../header.php';
 ?>
-<main>
 
+<main>
     <h1>Durchsuche unsere Datenbanken!</h1>
+    <!-- Rezepte mit der Ernährungskategorie -->
     <form>
         <label for="R_Cat">Rezepte mit der Ernährungskategorie:</label>
         <input class="index" list="R_Cat" type="text" name="R_Cat" />
@@ -24,11 +25,10 @@ include_once '../../header.php';
         </datalist>
         <button class="get" type="submit">Get</button>
         <br />
-
     </form>
-
     <br />
 
+    <!-- Zutaten von Rezept -->
     <form class="IngredientsOfRecipe" method="GET">
         <label for="I_Recepie">Zutaten von Rezept</label>
         <input class="index" list="I_Recepie" type="text" name="I_Recepie">
@@ -43,20 +43,18 @@ include_once '../../header.php';
         </datalist>
         <button class="get" type="submit">Get</button>
         <br />
-
     </form>
-
     <br />
 
+    <!-- Zutaten, die nicht in Rezepten enthalten sind -->
     <form class="IngredientsNotInRecipe" method="GET">
         <label for="N_Recepie">Zutaten, die nicht in Rezepten enthalten sind</label>
         <input class="get" name="N_Recepie" type="submit" value="Get">
         <br />
-
     </form>
-
     <br />
 
+    <!-- Durchschnittler Nährwert pro Bestellung -->
     <form>
         <label for="N_OrderID">Durchschnittler Nährwert pro Bestellung</label>
         <input class="index" list="N_OrderID" type="text" name="N_OrderID" />
@@ -72,27 +70,26 @@ include_once '../../header.php';
         <button class="get" type="submit">Get</button>
         <br />
     </form>
-
     <br />
 
+    <!-- Rezepte, unter Kalorienwert -->
     <form class="CaloriesBelowValue" method="GET">
         <label for="C_Value">Rezepte, unter Kalorienwert:</label>
         <input class="index" type="number" name="C_Value">
         <button class="get" type="submit">Get</button>
         <br />
-
     </form>
-
     <br />
 
+    <!-- Rezepte, die weniger als 5 Zutaten enthalten -->
     <form class="IngredientsNotInRecipe" method="GET">
         <label for="R_LessThan5">Rezepte, die weniger als 5 Zutaten enthalten</label>
         <input class="get" name="R_LessThan5" type="submit" value="Get">
         <br />
     </form>
-
     <br />
 
+    <!-- Rezepte mit weniger 5 Zutaten und der Ernährungskategorie -->
     <form>
         <label for="5_Category">Rezepte mit weniger 5 Zutaten und der Ernährungskategorie:</label>
         <input class="index" list="5_Category" type="text" name="5_Category" />
@@ -108,27 +105,25 @@ include_once '../../header.php';
         <button class="get" type="submit">Get</button>
         <br />
     </form>
-
     <br />
 
+    <!-- Alle Rezepte -->
     <form class="Rezepte" method="GET">
         <label for="Recipes">Alle Rezepte</label>
         <input class="get" name="Recipes" type="submit" value="Get">
         <br />
-
     </form>
-
     <br />
 
+    <!-- Alle Zutaten -->
     <form class="Zutaten" method="GET">
         <label for="Ingredients">Alle Zutaten</label>
         <input class="get" name="Ingredients" type="submit" value="Get">
         <br />
-
     </form>
-
     <br />
 
+    <!-- Rezepte mit der Beschränkung -->
     <form>
         <label for="R_Res">Rezepte mit der Beschränkung:</label>
         <input class="index" list="R_Res" type="text" name="R_Res">
@@ -143,12 +138,9 @@ include_once '../../header.php';
         </datalist>
         <button class="get" type="submit">Get</button>
         <br />
-
     </form>
 
-
     <!-- Site Output -->
-
     <!-- Rezepte mit der Ernährungskategorie -->
     <?php
     if (isset($_GET['R_Cat'])) {
@@ -299,8 +291,6 @@ include_once '../../header.php';
     }
     ?>
 </main>
-
-
 
 <?php
 mysqli_close($conn);
