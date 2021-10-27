@@ -46,6 +46,10 @@ button.signup-submit-button:focus {
    @include submit-button-hover;
 }
 
+input[type="date"]:invalid::-webkit-datetime-edit {
+   color: #999;
+}
+
 //Profilinfo
 div.kundeninfo {
    border-style: solid;

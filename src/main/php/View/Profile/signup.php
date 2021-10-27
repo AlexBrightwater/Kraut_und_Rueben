@@ -7,27 +7,30 @@ include_once '../../header.php';
             <h2>Sign Up</h2>
             <form class="form" action="../../Controller/SignupController.php" method="POST">
 
-            <input class="signup-form-input" type="text" name="firstname" placeholder="Vorname">              
-            <input class="signup-form-input" type="text" name="lastname" placeholder="Nachname">              
-            <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">             
-            <input class="signup-form-input" class="signup-form-input" type="password" name="password-repeat" placeholder="Repeat your password...">              
-            <input class="signup-form-input" type="text" name="email" placeholder="E-Mail">              
-            <input class="signup-form-input" type="date" name="birthdate" placeholder="Geburtsdatum">              
-            <input class="signup-form-input" type="text" name="city" placeholder="Ort">             
-            <input class="signup-form-input" ype="text" name="postalCode" placeholder="Plz">             
-            <input class="signup-form-input" type="text" name="street" placeholder="Straße">             
-            <input class="signup-form-input" type="text" name="houseNo" placeholder="Haus Nr.">              
-            <input class="signup-form-input" type="text" name="phone" placeholder="Telefon">
-            <br>
-            <input name="ToS" type="checkbox" required>
-            <label for="ToS">By clicking "Sign up", you agree to our terms of service and privacy policy.</label>
+                <input class="signup-form-input" type="text" name="firstname" placeholder="Vorname">
+                <input class="signup-form-input" type="text" name="lastname" placeholder="Nachname">
+                <input class="signup-form-input" type="password" name="password" placeholder="Enter your password...">
+                <input class="signup-form-input" class="signup-form-input" type="password" name="password-repeat" placeholder="Repeat your password...">
+                <input class="signup-form-input" type="text" name="email" placeholder="E-Mail">
+                <!--<input class="signup-form-input" type="date" name="birthdate" placeholder="Geburtsdatum">-->
+                <input class="signup-form-input input-geb" name="birthdate" placeholder="Geburtsdatum" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+
+
+                <input class="signup-form-input" type="text" name="city" placeholder="Ort">
+                <input class="signup-form-input" ype="text" name="postalCode" placeholder="Plz">
+                <input class="signup-form-input" type="text" name="street" placeholder="Straße">
+                <input class="signup-form-input" type="text" name="houseNo" placeholder="Haus Nr.">
+                <input class="signup-form-input" type="text" name="phone" placeholder="Telefon">
+                <br>
+                <input name="ToS" type="checkbox" required>
+                <label for="ToS">By clicking "Sign up", you agree to our terms of service and privacy policy.</label>
                 <div class="signup-form-submit">
                     <button class="signup-submit-button" type="submit" name="submit">Sign Up</button>
 
                     <?php
-                    if(isset($_GET["error"])){
+                    if (isset($_GET["error"])) {
 
-                        switch ($_GET["error"]){
+                        switch ($_GET["error"]) {
                             case "emptyinput":
                                 echo "<p class='signup-submit-error'>Fill in all required fields!</p>";
                                 break;
@@ -53,6 +56,6 @@ include_once '../../header.php';
     </section>
 </main>
 
-<?php 
+<?php
 include_once '../../footer.php';
 ?>
