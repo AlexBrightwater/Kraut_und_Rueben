@@ -22,36 +22,35 @@ include_once '../../Service/Statements.php';
                   </form>";
 
         echo "<br>";
-        echo "";
+
+        echo "<div>";
+
         $orders = MyOrders($conn);
-        echo "<table>";
-        echo "<tr><th><h4>Meine Bestellungen</h4></th><th colspan='2'></th></tr>";
         while ($orderRow = mysqli_fetch_assoc($orders)) {
-            echo "<tr><td>" . $orderRow["datum"] . "</td><td colspan='2'></td></tr>";
-            echo "<tr><td colspan='3'></td></tr>";
+            echo "<h3>Meine Bestellungen vom ". $orderRow["datum"] ."</h3>";
+            echo "<h4>Item</h4>";
+            echo "<h4>Menge</h4>";
 
             $orderedRecipes = RecipesOfOrder($conn, $orderRow["bestellung_id"]);
             if(mysqli_num_rows($orderedRecipes)>0){
-                echo "<tr><td>Bestellte Rezepte</td><td colspan='3'></tr>";
                 while ($recipesRow = mysqli_fetch_assoc($orderedRecipes)){
-                    echo "<tr><td></td><td>" . $recipesRow["rezept_name"] . "</td><td>x". $recipesRow["menge"] ."</td></tr>";
+                    echo "<p>". $recipesRow["rezept_name"] . "x" .$recipesRow["menge"] ."</p>";
                 }
-                echo "<tr><td colspan='3'></td></tr>";
-            }
 
+            }
 
             $orderedIngredients = IngredientsOfOrder($conn, $orderRow["bestellung_id"]);
             if(mysqli_num_rows($orderedIngredients)>0) {
-                echo "<tr><td>Bestellte Zutaten</td><td colspan='3'></tr>";
                 while ($ingredientsRow = mysqli_fetch_assoc($orderedIngredients)) {
-                    echo "<tr><td></td><td>" . $ingredientsRow["zutat_name"] . "</td><td>x" . $ingredientsRow["menge"] . "</td></tr>";
+                    echo "<p>". $ingredientsRow["zutat_name"] . "x" .$ingredientsRow["menge"] ."</p>";
                 }
-                echo "<tr><td colspan='3'></td></tr>";
             }
 
-            echo "<tr><td colspan='2'></td><td>" . $orderRow["gesamtpreis_ct"] / 100 . "€</td></tr>";
-            echo "<tr><td colspan='3'></td></tr>";
+            echo "<div><h4>Gesamtpreis". $orderRow["gesamtpreis_ct"] / 100 ."€</h4></div>";
         }
+
+        echo "</div>";
+
     } else {
         header("location: login.php");
         exit();
