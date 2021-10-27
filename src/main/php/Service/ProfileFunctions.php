@@ -77,7 +77,7 @@
         $_SESSION["birthdate"] = $userExists["geburtsdatum"];
         $_SESSION["street"] = $userExists["strasse"];
         $_SESSION["houseNo"] = $userExists["haus_nr"];
-        $_SESSION["postalCode"] = $userExists["pls"];
+        $_SESSION["postalCode"] = $userExists["plz"];
         $_SESSION["city"] = $userExists["ort"];
         $_SESSION["phone"] = $userExists["telefon"];
 
