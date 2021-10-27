@@ -143,6 +143,24 @@
         return executeStmt($stmt);
     }
 
+    function RecipesOfOrder($conn, $order){
+        $sql = "SELECT bestellungrezept.bestellung_id, rezept.rezept_name, bestellungrezept.menge FROM `bestellungrezept`
+                INNER JOIN rezept ON rezept.rezept_id = bestellungrezept.rezept_id
+                WHERE bestellung_id = ?;";
+        $stmt = prepareStmt($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $order);
+        return executeStmt($stmt);
+    }
+
+    function IngredientsOfOrder($conn, $order){
+        $sql = "SELECT bestellungzutat.bestellung_id, zutat.zutat_name,  bestellungzutat.menge FROM bestellungzutat
+                INNER JOIN zutat ON bestellungzutat.zutat_id = zutat.zutat_id
+                WHERE bestellung_id = ?;";
+        $stmt = prepareStmt($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $order);
+        return executeStmt($stmt);
+    }
+
 	function RecipesOfRestrictions($conn, $restriction){
 		$sql =  "SELECT rezept_name, beschränkung.beschränkung_name FROM rezept
 				INNER JOIN rezeptbeschränkung ON rezept.rezept_id = rezeptbeschränkung.rezept_id
