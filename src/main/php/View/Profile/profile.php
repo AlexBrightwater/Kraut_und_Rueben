@@ -35,6 +35,7 @@ include_once '../../Service/Statements.php';
         echo "<div class='avatar'>";
         echo "<img src='/Kraut_und_Rueben/www/img/avatar.png' width='175px'>";
         echo "</div>" /*close avatar */;
+
         echo "<div class='PInfo-right'>";
         echo "<p>Vorname: " . $_SESSION["firstname"] . "</p>";
         echo "<p>Nachname: " . $_SESSION["lastname"] . "</p>";
@@ -46,6 +47,7 @@ include_once '../../Service/Statements.php';
         echo "<p>Haus Nr.: " . $_SESSION["houseNo"] . "</p>";
         echo "<p>Telefon: " . $_SESSION["phone"] . "</p>";
         echo "</div>"/* close PInfo-right */;
+
         echo "</div>" /*close PInfo*/;
 
         echo "<div class='delete-profile'>";
@@ -77,7 +79,7 @@ include_once '../../Service/Statements.php';
                 }
             }
             echo "</table>";
-            echo "<hr><div class='gesamtpreis'><h4>Gesamtpreis</h4><h4>" . $orderRow["gesamtpreis_ct"] / 100 . "€</h4></div>";
+            echo "<hr class='hr2'><div class='gesamtpreis'><h4 class='h4'>Gesamtpreis</h4><h4 class='h4'>" . $orderRow["gesamtpreis_ct"] / 100 . "€</h4></div>";
             echo "</div>";/* close order-card */
         }
         echo "</div>";/* clode all-orders */

@@ -46,6 +46,29 @@ button.signup-submit-button:focus {
    @include submit-button-hover;
 }
 
+//Profilinfo
+div.kundeninfo {
+   border-style: solid;
+   border-width: 5px;
+   border-color: $color_secondary;
+   border-radius: 5px;
+   padding: 5px;
+   p {
+      margin: 0.3rem;
+   }
+   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+div.PInfo {
+   display: flex;
+   flex-wrap: wrap;
+   overflow: hidden;
+}
+
+div.PInfo-right {
+   margin-left: 50px;
+}
+
 //Profile page
 div.all-orders {
    display: flex;
@@ -55,13 +78,14 @@ div.all-orders {
 
 div.order-card {
    background-color: $color_primary;
-   width: 30%;
+   width: 350px;
    border-style: solid;
    border-width: 5px;
    border-color: $color_secondary;
    border-radius: 15px;
-   padding: 5px;
+   padding: 0px;
    margin-bottom: 2rem;
+   overflow: hidden;
    //box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
    //box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
@@ -70,12 +94,23 @@ div.order-card {
       display: flex;
       justify-content: space-evenly;
    }
-   div.meineBestellungen {
+   h3.meineBestellungen {
+      margin-left: 5px;
+      margin-right: 5px;
       text-align: center;
+   }
+   .hr2 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.2rem;
    }
    div.gesamtpreis {
       display: flex;
       justify-content: space-between;
+      padding-left: 5px;
+      padding-right: 5px;
+      .h4 {
+         margin-top: 0;
+      }
    }
 }
 
@@ -90,25 +125,4 @@ button.delete-profile:hover {
 div.delete-profile {
    display: flex;
    justify-content: flex-end;
-}
-
-//Profilinfo
-div.kundeninfo {
-   border-style: solid;
-   border-width: 5px;
-   border-color: $color_secondary;
-   border-radius: 15px;
-   padding: 5px;
-   p {
-      margin: 0.3rem;
-   }
-   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-div.PInfo {
-   display: flex;
-}
-
-div.PInfo-right {
-   margin-left: 50px;
 }

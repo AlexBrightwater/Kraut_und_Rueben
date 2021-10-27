@@ -115,14 +115,23 @@ th {
 
 button.get,
 input.get {
-  background-color: #482e3e;
+  background-color: #69495E;
   border: none;
   color: #fff;
-  width: calc(auto + 10px);
+  width: calc(auto + 50px);
   border-radius: 15px;
-  padding: 3px 7px;
+  padding: 3px 10px;
+  padding-right: 12px;
   font-size: 0.9rem;
   cursor: pointer;
+  text-align: center;
+}
+
+button.get:hover,
+input.get:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #482e3e;
 }
 
 input.index {
@@ -131,9 +140,16 @@ input.index {
   border-right: none;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-bottom-color: #482e3e;
+  border-bottom-color: #69495E;
   border-bottom-width: 2px;
   border-bottom-style: solid;
+}
+
+input.index:focus,
+input.index:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-bottom-color: #482e3e;
 }
 
 div#here {
