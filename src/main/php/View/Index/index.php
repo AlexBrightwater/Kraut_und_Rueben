@@ -8,7 +8,6 @@ require_once '../../Service/Statements.php';
 include_once '../../header.php';
 ?>
 
-<script src="/Kraut_und_Rueben/www/js/app.js"></script>
 <main>
     <h1>Durchsuche unsere Datenbanken!</h1>
     <!-- Rezepte mit der Ernährungskategorie -->
@@ -24,7 +23,7 @@ include_once '../../header.php';
             }
             ?>
         </datalist>
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
         <br />
     </form>
     <br />
@@ -42,7 +41,7 @@ include_once '../../header.php';
             }
             ?>
         </datalist>
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
         <br />
     </form>
     <br />
@@ -50,7 +49,7 @@ include_once '../../header.php';
     <!-- Zutaten, die nicht in Rezepten enthalten sind -->
     <form class="IngredientsNotInRecipe" method="GET">
         <label for="N_Recepie">Zutaten, die nicht in Rezepten enthalten sind</label>
-        <a href="#here"><input class="get" name="N_Recepie" type="submit" value="Get"></a>
+        <input class="get" name="N_Recepie" type="submit" value="Get">
         <br />
     </form>
     <br />
@@ -68,7 +67,7 @@ include_once '../../header.php';
             }
             ?>
         </datalist>
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
         <br />
     </form>
     <br />
@@ -77,7 +76,7 @@ include_once '../../header.php';
     <form class="CaloriesBelowValue" method="GET">
         <label for="C_Value">Rezepte, unter Kalorienwert:</label>
         <input class="index" type="number" name="C_Value">
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
         <br />
     </form>
     <br />
@@ -85,7 +84,7 @@ include_once '../../header.php';
     <!-- Rezepte, die weniger als 5 Zutaten enthalten -->
     <form class="IngredientsNotInRecipe" method="GET">
         <label for="R_LessThan5">Rezepte, die weniger als 5 Zutaten enthalten</label>
-        <a href="#here"><input class="get" name="R_LessThan5" type="submit" value="Get"></a>
+        <input class="get" name="R_LessThan5" type="submit" value="Get">
         <br />
     </form>
     <br />
@@ -103,7 +102,7 @@ include_once '../../header.php';
             }
             ?>
         </datalist>
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
         <br />
     </form>
     <br />
@@ -111,7 +110,7 @@ include_once '../../header.php';
     <!-- Alle Rezepte -->
     <form class="Rezepte" method="GET">
         <label for="Recipes">Alle Rezepte</label>
-        <a href="#here"><input class="get" name="Recipes" type="submit" value="Get"></a>
+        <input class="get" name="Recipes" type="submit" value="Get">
         <br />
     </form>
     <br />
@@ -119,7 +118,7 @@ include_once '../../header.php';
     <!-- Alle Zutaten -->
     <form class="Zutaten" method="GET">
         <label for="Ingredients">Alle Zutaten</label>
-        <a href="#here"><input class="get" name="Ingredients" type="submit" value="Get"></a>
+        <input class="get" name="Ingredients" type="submit" value="Get">
         <br />
     </form>
     <br />
@@ -137,21 +136,12 @@ include_once '../../header.php';
             }
             ?>
         </datalist>
-        <a href="#here"><button class="get" type="submit">Get</button></a>
+        <button class="get" type="submit">Get</button>
     </form>
 
     <!-- Jump to output -->
     <script>
-        const target = document.querySelectorAll('a[href^="#"]');
-        for (const item of target) {
-            item.onclick = function (e) {
-                const hash = this.getAttribute("href");
-                const elem = document.getElementById(hash.replace("#",""));
-                history.pushState (null, null, hash);
-                elem.scrollIntoView({ left: 0, block: 'start', behavior: 'smooth' });
-                e.preventDefault();
-            }
-        }
+        /*Doesnt work with inputs */
     </script>
 
     <!-- Site Output -->

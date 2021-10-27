@@ -14,7 +14,7 @@ a.signup-form-switch:focus {
   border-bottom: 2px solid #69495E;
   display: inline-block;
   line-height: 0.85;
-  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
 }
 
 .login-form-text {
@@ -93,8 +93,11 @@ div.all-orders {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 div.order-card {
@@ -105,8 +108,7 @@ div.order-card {
   border-color: #482e3e;
   border-radius: 15px;
   padding: 5px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 div.order-card div.ItemMenge {

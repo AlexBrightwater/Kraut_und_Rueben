@@ -14,7 +14,7 @@ a.signup-form-switch:focus {
   border-bottom: 2px solid #69495E;
   display: inline-block;
   line-height: 0.85;
-  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
 }
 
 html {
@@ -98,7 +98,8 @@ table {
   width: 100%;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
@@ -120,7 +121,7 @@ input.get {
   width: calc(auto + 10px);
   border-radius: 15px;
   padding: 3px 7px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
