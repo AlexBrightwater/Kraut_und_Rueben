@@ -109,6 +109,8 @@ div.order-card {
   border-radius: 15px;
   padding: 5px;
   margin-bottom: 2rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 div.order-card div.ItemMenge {
@@ -151,14 +153,35 @@ button.delete-profile:hover {
   cursor: pointer;
 }
 
+div.delete-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 div.kundeninfo {
   border-style: solid;
   border-width: 5px;
   border-color: #482e3e;
   border-radius: 15px;
   padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+          box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 div.kundeninfo p {
   margin: 0.3rem;
+}
+
+div.PInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.PInfo-right {
+  margin-left: 50px;
 }

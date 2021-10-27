@@ -31,6 +31,11 @@ include_once '../../Service/Statements.php';
         echo "<div class='kundeninfo'>";
         echo "<h1>" . $timeoday . $_SESSION["firstname"] . "</h1>";
 
+        echo "<div class='PInfo'>";
+        echo "<div class='avatar'>";
+        echo "<img src='/Kraut_und_Rueben/www/img/avatar.png' width='175px'>";
+        echo "</div>" /*close avatar */;
+        echo "<div class='PInfo-right'>";
         echo "<p>Vorname: " . $_SESSION["firstname"] . "</p>";
         echo "<p>Nachname: " . $_SESSION["lastname"] . "</p>";
         echo "<p>E-Mail: " . $_SESSION["email"] . "</p>";
@@ -40,11 +45,15 @@ include_once '../../Service/Statements.php';
         echo "<p>Straße: " . $_SESSION["street"] . "</p>";
         echo "<p>Haus Nr.: " . $_SESSION["houseNo"] . "</p>";
         echo "<p>Telefon: " . $_SESSION["phone"] . "</p>";
+        echo "</div>"/* close PInfo-right */;
+        echo "</div>" /*close PInfo*/;
 
+        echo "<div class='delete-profile'>";
         echo    "<form action='/Kraut_und_Rueben/src/main/php/Controller/ProfileController.php' method='post'>
-                        <button class='delete-profile' type='submit' name='delete'>Profil löschen</button>
-                    </form>";
-        echo "</div>";
+                    <button class='delete-profile' type='submit' name='delete'>Profil löschen</button>
+                </form>";
+        echo "</div>"/*close delete-profile */;
+        echo "</div>" /*close Kundeninfo */;
 
         echo "<br>";
 
