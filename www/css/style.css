@@ -14,7 +14,7 @@ a.signup-form-switch:focus {
   border-bottom: 2px solid #69495E;
   display: inline-block;
   line-height: 0.85;
-  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
 }
 
 html {
@@ -133,4 +133,9 @@ input.index {
   border-bottom-color: #482e3e;
   border-bottom-width: 2px;
   border-bottom-style: solid;
+}
+
+div#here {
+  visibility: none;
+  color: #fff;
 }

@@ -103,3 +103,8 @@ input.index{
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
+
+div#here{
+    visibility: none;
+    color: $text; 
+}

@@ -9,6 +9,18 @@
         <title>Kraut & Rüben</title>
         <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/style.css">
         <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/profile.css">
+        <script>
+            const target = document.querySelectorAll('a[href^="#"]');
+            for (const item of target) {
+                item.onclick = function (e) {
+                    const hash = this.getAttribute("href");
+                    const elem = document.getElementById(hash.replace("#",""));
+                    //history.pushState (null, null, hash);
+                    elem.scrollIntoView({ left: 0, block: 'start', behavior: 'smooth' });
+                    e.preventDefault();
+                }
+            }
+        </script>
     </head>
     <body>
         <nav class='header'>
