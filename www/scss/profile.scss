@@ -45,3 +45,54 @@ button.signup-submit-button:hover,
 button.signup-submit-button:focus{
     @include submit-button-hover;
 }
+
+
+//Profile page
+div.all-orders{
+    display: flex;
+    justify-content: space-around;
+}
+
+div.order-card{
+    background-color: $color_primary;
+    width: 30%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: $color_secondary;
+    border-radius: 15px;
+    padding: 5px;
+    flex-wrap: wrap;
+
+    div.ItemMenge{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    div.meineBestellungen{
+        text-align: center;
+    }
+    div.gesamtpreis{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+//Profil löschen button
+button.delete-profile{
+    cursor:pointer;
+    @include submit-button;
+}
+button.delete-profile:hover{
+    @include submit-button-hover;
+}
+
+//Profilinfo
+div.kundeninfo{
+    border-style: solid;
+    border-width: 5px;
+    border-color: $color_secondary;
+    border-radius: 15px;
+    padding: 5px;
+    p{
+        margin: 0.3rem; 
+    }
+}
