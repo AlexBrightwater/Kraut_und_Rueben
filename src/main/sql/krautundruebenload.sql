@@ -143,22 +143,22 @@ INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
 VALUES (2003, '2020-08-13', 2087);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2002, '2020-08-07', 1018);
+VALUES (2002, '2020-08-07', 1418);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2007, '2020-08-07', 1018);
+VALUES (2007, '2020-08-07', 1818);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2007, '2020-08-09', 1589);
+VALUES (2007, '2020-08-09', 2289);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2007, '2020-08-10', 398);
+VALUES (2007, '2020-08-10', 3398);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2007, '2020-08-26', 709);
+VALUES (2007, '2020-08-26', 1709);
 
 INSERT INTO bestellung (kunde_id, datum, gesamtpreis_ct)
-VALUES (2007, '2020-08-29', 2486);
+VALUES (2007, '2020-08-29', 4486);
 
 INSERT INTO rezept(rezept_id, rezept_name)
 VALUES (1, 'Caesersalat');
