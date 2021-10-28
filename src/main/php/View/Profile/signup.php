@@ -23,7 +23,7 @@ include_once '../../header.php';
                 <input class="signup-form-input" type="text" name="phone" placeholder="Telefon">
                 <br>
                 <input name="ToS" type="checkbox" required>
-                <label for="ToS">By clicking "Sign up", you agree to our terms of service and privacy policy.</label>
+                <label for="ToS">By clicking "Sign up", you agree to our terms of service and <a href="/Kraut_und_Rueben/src/main/php/datenschutz.php">privacy policy</a>.</label>
                 <div class="signup-form-submit">
                     <button class="signup-submit-button" type="submit" name="submit">Sign Up</button>
 

@@ -9,20 +9,26 @@
         <title>Kraut & Rüben</title>
         <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/style.css">
         <link rel="stylesheet" href="/Kraut_und_Rueben/www/css/profile.css">
-        <script>
-            const target = document.querySelectorAll('a[href^="#"]');
-            for (const item of target) {
-                item.onclick = function (e) {
-                    const hash = this.getAttribute("href");
-                    const elem = document.getElementById(hash.replace("#",""));
-                    //history.pushState (null, null, hash);
-                    elem.scrollIntoView({ left: 0, block: 'start', behavior: 'smooth' });
-                    e.preventDefault();
-                }
-            }
-        </script>
+        <script src="https://kit.fontawesome.com/1908996dcd.js" crossorigin="anonymous"></script>
     </head>
     <body>
+
+    <script>
+        function nodown(){ 
+            var element = document.getElementById("dropdown-content");
+            element.style.opacity = '0'
+        }
+                
+       function dropdown(){
+        var element = document.getElementById("dropdown-content");
+        if(element.style.opacity === '0') {
+                element.style.opacity = '100%';
+                element.style.transition = '0.3s ease-in-out';
+            } else {
+                element.style.opacity = '0'
+            }
+       }
+    </script>
         <nav class='header'>
                 <a href="/Kraut_und_Rueben/src/main/php/View/Index/index.php"><img class="wrapper-item wrapper-logo wrapper-left" src="../../../../../www/img/logo.png" alt="logo"></a>
                 <div>
@@ -52,7 +58,15 @@
 
                         }
                     ?>
-                </div>
+                    <i class="fas fa-bars" onmouseover="dropdown()"></i>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <ul>
+                            <li><a href="/Kraut_und_Rueben/src/main/php/View/Index/index.php">Home</a></li>
+                            <li><a href="/Kraut_und_Rueben/src/main/php/impressum.php">Impressum</a></li>
+                            <li><a href="/Kraut_und_Rueben/src/main/php/datenschutz.php">Datenschutz</a></li>
+                        </ul>
+                    </div>
+                </div> 
         </nav>
-        <div class="wrapper">
+        <div class="wrapper" onclick="nodown()">
             <div class="wrapper-leftbar"></div>
